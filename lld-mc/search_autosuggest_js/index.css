@@ -1,3 +1,15 @@
-.parent_box {
-  text-align: center;
+main {
+  width: 500px;
+  margin: 10px auto 0 auto; /* to make main center aligned*/
+}
+#search {
+  padding: 10px;
+  width: 100%;
+}
+#suggestion-area {
+  border: 1px solid red;
+  margin-top: 10px;
+  min-height: 100px; /* to give min height to suggestion height*/
+  padding: 5px;
+  display: none; /* as only visisble if input is in focus */
 }
