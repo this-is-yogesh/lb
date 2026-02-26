@@ -1,9 +1,6 @@
 
 /**
-Squares of a Sorted Array
-Patten: 
 3Sum Smaller
-Linked List Cycle
 Sort Colors
 Container With Most Water
 Happy Number
