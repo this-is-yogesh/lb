@@ -18,14 +18,14 @@ const QueueCallback = function (order = "FIFO") {
     } else {
       if (this.queueOfCallbacks.length < 6)
         this.queueOfCallbacks.push(callback);
-      console.log(this.queueOfCallbacks.length, "queuelength");
+      // console.log(this.queueOfCallbacks.length, "queuelength");
     }
   };
 
   //private method
   //if we do executeNext = function(){} and call executeNext because it is a normal function, this inside will depened on how its called and hence it was not working but using arrow function inherits this from parent scope so this works in executeNext
   const executeNext = () => {
-    if (this.queueOfCallbacks && this.orderExecutionLimit < 2) {
+    if (this.queueOfCallbacks.length > 0 && this.orderExecutionLimit < 2) {
       let nextFunctionToExecute =
         this.order == "FIFO"
           ? this.queueOfCallbacks.shift()
@@ -46,7 +46,7 @@ function dummyAPI(index) {
   };
 }
 
-let obj = new QueueCallback();
+let obj = new QueueCallback("LIFO");
 obj.process(dummyAPI(1));
 obj.process(dummyAPI(2));
 obj.process(dummyAPI(3));
