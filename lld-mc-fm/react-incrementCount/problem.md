@@ -1,0 +1,1 @@
+start button should increase the count per second, stop button should pause it and then clicking on start again should resume it from last count
