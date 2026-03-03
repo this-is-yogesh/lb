@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [responseData, setResponseData] = useState([]);
+  const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
   function makeApiCall() {
     fetch(`https://api.unsplash.com/photos?page=${1}&per_page=${30}`, {
       headers: {
-        Authorization: "Client-ID 9DNy2sKxNxj0pjzYorqspswc1kQIggOgBYLgn8D7qS4",
+        Authorization: `Client-ID ${accessKey}`,
       },
     })
       .then(res => res.json())
@@ -33,14 +34,21 @@ function App() {
       <div className="area">
         {responseData?.length > 0 &&
           responseData?.map(data => {
-            return (
-              <div className="single_response" key={data?.id}>
-                <img height={300} width={300} src={data?.imageUrl} />
-                <div className="name">{data?.user_name}</div>
-              </div>
-            );
+            /**1-- doing {..data} is exactly same as writing
+             * id={1} imageUrl={https://} user_name={'lakeO'}
+             */
+            return <ImageComponent key={data.id} {...data} />;
           })}
       </div>
+    </div>
+  );
+}
+
+function ImageComponent({ imageUrl, user_name }) {
+  return (
+    <div className="single_response">
+      <img height={300} width={300} src={imageUrl} />
+      <div className="name">{user_name}</div>
     </div>
   );
 }
