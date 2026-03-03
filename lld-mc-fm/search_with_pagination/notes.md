@@ -34,3 +34,5 @@ so in order to make memo work correctly the component we are wrapping it with sh
 so now if you placed your memo(function()) outside app now what memo will do is, it will compare the props getting received with the older prop and new prop so say we change page then newId !==oldId and it will run the funciton inside memo again but if newId === oldId it will skip render and so if just change setLoading the old and new props will be same function inside memo will not run again 
 
 one thing to take care of when passing props so here we are passing props as {...data} which is fine because internally it is getting passed as id='3132' name='ds' , data ={data} is also fine but if were doing something like data={{data}} or data={{id='dsd' , name='ads'}} then memo will consider that oldPropobj !== newPropobj because this creates new obj instannce everytime and so it will always render
+
+4-- how to use select option

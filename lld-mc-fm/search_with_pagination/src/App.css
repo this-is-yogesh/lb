@@ -1,12 +1,23 @@
 .single_response {
   display: flex;
   flex-direction: row;
-  margin-top:10px;
+  margin-top: 10px;
   align-items: center;
-  gap:10px
+  gap: 10px;
 }
 
 .area {
-  background-color: red;
-  padding:10px 0px 0px 10px
+  padding: 10px 0px 0px 10px;
+}
+
+.selet_page {
+  position: fixed;
+  top: 0;
+  background-color: wheat;
+  padding: 5px;
+  width: auto;
+}
+
+.selet_page input{
+  margin-left: 10px;
 }
