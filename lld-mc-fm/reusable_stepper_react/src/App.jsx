@@ -3,7 +3,7 @@ import "./App.css";
 import Stepper from "./Stepper";
 
 function App() {
-  const list = [<Comp1 />, <Comp2 />, <Comp3 />];
+  const list = [<Comp1 />, <Comp2 />, <Comp3 />, <Comp4 />];
   return (
     <div>
       <Stepper list={list} />
@@ -19,5 +19,8 @@ const Comp2 = () => {
 };
 const Comp3 = () => {
   return <div>comp3</div>;
+};
+const Comp4 = () => {
+  return <div>comp4</div>;
 };
 export default App;

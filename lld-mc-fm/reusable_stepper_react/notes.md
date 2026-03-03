@@ -33,4 +33,11 @@
   z-index: -1;
 }
 
-2--
+2--why is transistion used 
+to do changes in property smoothly
+
+3-- space-evenly was causing issue 
+because space-evenly makes first element space out evenly from the start whereas space-between makes first element start at the very corner which was what we needed for stepper to start from corner to take account of full width
+
+4--straightforward logic to make progressline touch exact equal width
+const progressLineWidth = (100 / (list.length - 1)) * currentStep;
