@@ -42,4 +42,4 @@ because space-evenly makes first element space out evenly from the start whereas
 4--straightforward logic to make progressline touch exact equal width
 const progressLineWidth = (100 / (list.length - 1)) * currentStep;
 
-5-- we can use React.cloneElement(list[currentStep],{next,prev}),what happens internally is list[currentStep] = <Comp2 /> then this line that is React.cloneElement(list[currentStep], { prev, next }) becomes <Comp2 prev={prev} next={next} />, Since  elements  inside the list are already created without props, cloneElement lets you clone them and inject new props
+5-- we can use React.cloneElement(list[currentStep],{next,prev}),what happens internally is list[currentStep] = <Comp2 /> then this line that is React.cloneElement(list[currentStep], { prev, next }) becomes <Comp2 prev={prev} next={next} />, Since  elements  inside the list are already created without props, cloncleElement lets you clone them and inject new props
