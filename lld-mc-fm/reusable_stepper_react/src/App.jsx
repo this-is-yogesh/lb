@@ -11,16 +11,41 @@ function App() {
   );
 }
 
-const Comp1 = () => {
-  return <div>comp1</div>;
+const Comp1 = ({ onNext, onPrev }) => {
+  return(
+  <>
+    <button onClick={onNext}>Next</button>
+    <div>comp1</div>
+    <button onClick={onPrev}>Prev</button>
+  </>
+  )
+
 };
-const Comp2 = () => {
-  return <div>comp2</div>;
+const Comp2 = ({ onNext, onPrev }) => {
+  return (
+    <>
+      <button onClick={onNext}>Next</button>
+      <div>Comp2</div>
+      <button onClick={onPrev}>Prev</button>
+    </>
+  );
 };
-const Comp3 = () => {
-  return <div>comp3</div>;
+const Comp3 = ({ onNext, onPrev }) => {
+  return (
+    <>
+      <button onClick={onNext}>Next</button>
+      <div>comp3</div>
+      <button onClick={onPrev}>Prev</button>
+    </>
+  );
 };
-const Comp4 = () => {
-  return <div>comp4</div>;
+const Comp4 = ({ onNext, onPrev }) => {
+  return (
+    <>
+      <button onClick={onNext}>Next</button>
+      <div>comp4</div>
+      <button onClick={onPrev}>Prev</button>
+    </>
+  );
 };
 export default App;
