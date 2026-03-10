@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="container"></div>
+<script>
+document.getElementById("container").innerHTML =
+  Array.from({ length: 50 }, (_, i) =>
+    `<div class="blocks">${i + 1}</div>`
+  ).join("");
+</script>
+  <script src="index.js" ></script>
+</body>
+
+</html>
