@@ -1,3 +1,4 @@
+/**  3--code to make 3 elements fit into one line and entire page into grid */
 #container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
