@@ -9,7 +9,9 @@ function cssGenerateSelector(root, target) {
     selectors.unshift(selector);
     target = target.parentNode;
   }
-  selectors.unshift(`#${target.id}`);
+  if (root === target) {
+    selectors.unshift(`#${target.id}`);
+  }
 
   return selectors.join(">");
 }
