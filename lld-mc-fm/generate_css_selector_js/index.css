@@ -1,0 +1,7 @@
+#root
+  > section:nth-child(2)
+  > p:nth-child(1)
+  > span:nth-child(2)
+  > button:nth-child(3) {
+  background-color: red;
+}
