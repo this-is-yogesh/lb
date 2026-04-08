@@ -4,10 +4,10 @@
 - contains_duplicate
 - two_sum
 - majority_element
-- Find Pivot Index
-- Move Zeroes
-- Remove Duplicates from Sorted Array
-- Best Time to Buy/Sell Stock I
+- pivot_index
+- move_zeroes
+- remove_duplicates_from_sorted_array
+- best_time_to_buy_sell_stock_I
 - Best Time to Buy/Sell Stock II
 - Maximum Subarray (Kadane)
 - Maximum Product Subarray
