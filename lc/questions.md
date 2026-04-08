@@ -1,7 +1,7 @@
 
 
 1. Arrays & Hashing 
-- Contains Duplicate
+- contains_duplicate
 - two_sum
 - majority_element
 - Find Pivot Index

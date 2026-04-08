@@ -20,5 +20,5 @@ var majorityElement = function (nums) {
 /**
  * 
  * 1. explain the approach 
- * 2. give two solutions, one with hashing and other with optimal approach
+ * 2. give two solutions, one with hashing and other with optimal approach 
  */
