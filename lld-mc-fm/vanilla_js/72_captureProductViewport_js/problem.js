@@ -1,0 +1,1 @@
+/**The question was quoted as “If user scroll and see any property and stays there for more than 5 sec then call API and store that property”. */

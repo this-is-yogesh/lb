@@ -13,4 +13,4 @@ var moveZeroes = function (nums) {
 };
 
 
-/** write the approach */
+/** explain the approach */
