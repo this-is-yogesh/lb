@@ -6,42 +6,6 @@
     <title>Document</title>
   </head>
   <body>
-    <button id="btn">Click me</button>
-    <script>
-      const throttle = (array, limit, callback, delay) => {
-        let timerId;
-        let lastRan;
-        let queue = [...array];
-        return function () {
-          if (!lastRan) {
-            let tasks = queue.splice(0, limit);
-            callback(tasks);
-            lastRan = Date.now();
-          } else {
-            clearTimeout(timerId);
-            console.log(Date.now() - lastRan, delay, "returned**");
-            timerId = setTimeout(() => {
-              if (Date.now() - lastRan >= delay) {
-                let tasks = queue.splice(0, limit);
-                callback(tasks);
-                lastRan = Date.now();
-              }
-            }, [delay - (Date.now() - lastRan)]);
-          }
-        };
-      };
-      const button = document.getElementById("btn");
-      btn.addEventListener(
-        "click",
-        throttle(
-          [1, 2, 3, 4, 5, 6, 7, 8],
-          2,
-          tasks => {
-            console.log(tasks);
-          },
-          2000,
-        ),
-      );
-    </script>
+    <button id="first_button">Click me</button>
   </body>
 </html>
