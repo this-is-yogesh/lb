@@ -8,9 +8,9 @@
 - move_zeroes
 - remove_duplicates_from_sorted_array
 - best_time_to_buy_sell_stock_I
-- Best Time to Buy/Sell Stock II
-- Maximum Subarray (Kadane)
-- Maximum Product Subarray
+- best_time_to_buy_sell_stock_II 
+- maximum_subarray
+- maximum_product_subarray - **
 - Subarray Sum Equals K
 - Minimum Size Subarray Sum
 - Product of Array Except Self
