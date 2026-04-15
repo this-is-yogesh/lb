@@ -12,8 +12,8 @@
 - maximum_subarray
 - maximum_product_subarray - **
 - subarray_sum_equals_k - **
-- Minimum Size Subarray Sum
-- Product of Array Except Self
+- minimum_size_subarray_sum
+- product_of_array_except_self - **
 - Longest Consecutive Sequence
 - Container With Most Water
 - Trapping Rain Water

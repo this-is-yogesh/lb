@@ -1,6 +1,3 @@
-1. navigator.clipboard.writeText() and navigator.clipboard.readText()
-2.  it works because writeText and readText are fast apis
-3. 
 import { useState } from "react";
 
 function useCopyHook() {

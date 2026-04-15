@@ -1,2 +1,3 @@
 detect_overlapping_circles_react = first_impl
 useOnScreenHook_react = first_impl
+useCopyHook_react = first_impl
