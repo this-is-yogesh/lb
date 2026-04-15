@@ -11,7 +11,7 @@
 - best_time_to_buy_sell_stock_II 
 - maximum_subarray
 - maximum_product_subarray - **
-- Subarray Sum Equals K
+- subarray_sum_equals_k - **
 - Minimum Size Subarray Sum
 - Product of Array Except Self
 - Longest Consecutive Sequence
