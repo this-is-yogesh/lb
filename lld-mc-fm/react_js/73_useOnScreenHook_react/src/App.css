@@ -1,15 +1,14 @@
-.container {
+.products_box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  gap: 35px;
 }
 
-.blocks {
+.single_product {
   height: 100px;
-  background-color: red;
-  color: white;
-  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: red;
+  color:white
 }

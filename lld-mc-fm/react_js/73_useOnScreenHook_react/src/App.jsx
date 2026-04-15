@@ -1,27 +1,31 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import useOnScreenHook from "./hooks/useOnScreenHook";
 
-function Element({ index }) {
-  const ref = useRef();
-  const isInViewPort = useOnScreenHook(ref);
-  // console.log(index, "isInViewPort**");
-  // if (isInViewPort) {
-  //   console.log(index,'indexViewport');
-  // }
+function Element({ number }) {
+  let elementRef = useRef();
+  let isVisible = useOnScreenHook(elementRef);
   return (
-    <div key={index} ref={ref} className="blocks">
-      {index}
+    <div className="single_product" ref={elementRef}>
+      {isVisible ? `${number} -  visible ` : ""}
     </div>
   );
 }
-function App() {
-  const blocks = new Array();
 
-  for (let i = 0; i < 50; i++) {
-    blocks.push(<Element index={i + 1} key={i} />);
-  }
-  return <div className="container">{blocks}</div>;
+function App() {
+  const [products, setProducts] = useState(
+    Array.from({ length: 50 }, (_, index) => {
+      return index + 1;
+    }),
+  );
+  return (
+    <div className="products_box">
+      {products?.length > 0 &&
+        products.map((prd, idx) => {
+          return <Element key={idx} number={prd} />;
+        })}
+    </div>
+  );
 }
 
 export default App;
