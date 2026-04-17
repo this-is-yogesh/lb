@@ -14,9 +14,9 @@
 - subarray_sum_equals_k - **
 - minimum_size_subarray_sum
 - product_of_array_except_self - **
-- Longest Consecutive Sequence
-- Container With Most Water
-- Trapping Rain Water
+- longest_consecutive_sequence - **
+- container_with_most_water
+- trapping_rain_water
 - 3Sum
 - 4Sum
 - Gas Station
