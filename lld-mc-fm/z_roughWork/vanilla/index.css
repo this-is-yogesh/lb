@@ -1,14 +1,7 @@
-#blocks {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 5px;
-}
-
-.single_block {
-  height: 102px;
+#root
+  > section:nth-child(2)
+  > p:nth-child(1)
+  > span:nth-child(2)
+  > button:nth-child(1) {
   background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
 }
