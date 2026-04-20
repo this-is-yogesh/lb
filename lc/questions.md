@@ -17,9 +17,9 @@
 - longest_consecutive_sequence - **
 - container_with_most_water
 - trapping_rain_water
-- 3Sum
-- 4Sum
-- Gas Station
+- 3_sum
+- 4_sum
+- gas_station
 
 
 2. Strings
