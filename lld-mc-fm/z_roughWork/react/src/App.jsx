@@ -3,13 +3,24 @@ import "./App.css";
 import useCopyHook from "./hooks/useCopyHook";
 
 function App() {
-  const [value, setValue] = useState("");
-  let [copiedText, copy] = useCopyHook();
+  let timerRef = useRef(0);
+  let current = 0;
+  const [time, setTime] = useState(0);
 
+  function startTimer() {
+    timerRef.current = setInterval(() => {
+      setTime(prev => prev + 1);
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(timerRef.current);
+  }
   return (
     <div>
-      <input value={value} onChange={e => setValue(e.target.value)} />
-      <button onClick={() => copy(value)}>Copy Text : {copiedText}</button>
+      <button onClick={startTimer}>Start </button>
+      {time}
+      <button onClick={stopTimer}>Stop </button>
     </div>
   );
 }
