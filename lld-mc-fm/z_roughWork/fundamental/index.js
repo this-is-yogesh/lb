@@ -1,48 +1,49 @@
+/** write a function which will keep trying the api calls until retries are exhuasted */
+
 function testPromise() {
   let count = 0;
 
   return () => {
     return new Promise((resolve, reject) => {
       count++;
-      if (count <= 5) {
-        reject(`Reject count ${count}`);
+      if (count > 7) {
+        resolve("Promise resolved");
       } else {
-        resolve(`Resolved Count ${count}`);
+        reject("Promise Reject");
       }
     });
   };
 }
 
-function retry(func, retries) {
+function retryPromise(func, retries) {
   return new Promise((resolve, reject) => {
     func()
       .then(res => {
-        console.log(`called resolved once, retries: ${retries}`);
+        console.log("RESOLVED ONCE", retries);
         resolve(res);
       })
-      .catch(err => {
-        console.log(`called rejected once, retries: ${retries}`);
+      .catch(e => {
         if (retries === 0) {
-          reject(err);
-        } else {
-          retry(func, retries - 1)
-            .then(res => {
-              console.log(`resolved called-> retries: ${retries}`);
-              resolve(res);
-            })
-            .catch(err => {
-              console.log(`rejected called-> retries: ${retries}`);
-              reject(err);
-            });
+          console.log("REJECTED ONCE", retries);
+          reject(e);
         }
+        retryPromise(func, retries - 1)
+          .then(res => {
+            console.log("resolve->", retries);
+            resolve(res);
+          })
+          .catch(e => {
+            console.log("rejected->", retries);
+            reject(e);
+          });
       });
   });
 }
 
-retry(testPromise(), 9)
+retryPromise(testPromise(), 6)
   .then(res => {
-    console.log("Final", res);
+    console.log(res, "Resolved Finally");
   })
-  .catch(err => {
-    console.log("Final", err);
+  .catch(e => {
+    console.log(e, "Rejected Finally");
   });

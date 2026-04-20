@@ -7,7 +7,6 @@ On each day, you may decide to buy and/or sell the stock. You can only hold at m
 
 Find and return the maximum profit you can achieve.
 
- 
 
 Example 1:
 
@@ -32,9 +31,3 @@ function maxProfit(prices) {
   return profit;
 }
 
-/**approach :
- * will start iterating from the 1st index instead of 0th index to check if the prices[i] > prices[i-1], if so then then take the diff and add to profit
- *
- *
- *
- */

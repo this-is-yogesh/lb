@@ -40,6 +40,7 @@ var pivotIndex = function (nums) {
   let rightSum = 0;
 
   for (let i = nums.length - 1; i >= 0; i--) {
+    // you can also calculate sum from 0 to n-1 , doesnt matter
     rightSum += nums[i];
   }
 
