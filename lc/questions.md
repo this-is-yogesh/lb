@@ -23,9 +23,9 @@
 
 
 2. Strings
-- Valid Anagram 
-- Longest Common Prefix
-- Reverse Words in a String
+- valid_anagram 
+- longest_common_prefix
+- reverse_words_in_a_string
 - Remove Adjacent Duplicates in String
 - Valid Palindrome II
 - Longest Substring Without Repeating Characters
