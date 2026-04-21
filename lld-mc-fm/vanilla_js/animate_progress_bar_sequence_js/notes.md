@@ -21,12 +21,5 @@ Element is added with initial class (start_progress)
 Browser gets time to render initial state (e.g., width: 0)
 After 100ms → you change to full_width (width: 100%)
 Browser detects: width: 0 → width: 100%, a change between two rendered states
-and instead of setTimeout we can use requestAnimationFrame(() => {
-  barDiv.classList.add("full_width");
-}); , this ensures 
-a. Ensures the first frame is rendered
-b. No arbitrary delay
-c. More performant + reliable
-
 
 4. when was doing createProgressBar(count), it was taking 0 because that same count was being used in onTransistionEnd now that createProgressBar(n) then count here is global count

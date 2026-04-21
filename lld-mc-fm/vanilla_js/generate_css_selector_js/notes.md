@@ -1,5 +1,4 @@
-1. will go from target to root, first calculate the position of nth-child of current target and then add tag name and then, add it at start of selectors array and recursively call the same and go to root till root === target
-main is recursion and once root === target, it starts coming back a
+1. will go from target to root, first calculate the position of nth-child of current target and then add tag name and then, add it at start of selectors array and then make current target as parent and run the loop till root === target
 
 2. :nth-child(n) selects an element based on its position among ALL its siblings and tag:nth-child(n) matches only if It is that tag && it is at position n
 <div>
@@ -13,4 +12,3 @@ li:nth-child(1) does not select anything as nth-child(1) is p and it is not li, 
 
 4. direct child => div > p , indirect + direct => div p
 
-5. not getting added everytime because we are not using the returned selectors anywhere hence on every return it is adding r to the stack level of selectors array not the prev stack call array 

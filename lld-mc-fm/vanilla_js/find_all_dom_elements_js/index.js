@@ -21,7 +21,7 @@ const findElementsByColor = (root, colorCode) => {
     const rootColor = root.style.color;
     const computedColor = getComputedColor(rootColor);
     if (computedColor === standardColor) {
-      output.push(root);
+      output.push(root.innerText);
     }
     for (let child of root.children) {
       search(child);

@@ -61,7 +61,7 @@ function executeAsyncTasks(promises) {
   promises.reduce((acc, curr) => {
     return acc
       .then(() => {
-        return curr()
+        return curr() // most imp step, we are returning the promise
           .then(res => console.log(res, "res*"))
           .catch(e => {
             console.log(e, "error*");
