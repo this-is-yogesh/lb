@@ -1,31 +1,29 @@
-const findElementbyClassName = (root, path) => {
-  let classes = path.split(">");
-  let result = [];
-  traverseDom(root, classes, 0, result);
-  return result;
-};
+getElementByClassNameHierarchy(document.getElementById("root"), "a>b>c");
 
-function traverseDom(element, classes, index, result) {
+function getElementByClassNameHierarchy(element, classNames) {
+  let classArr = classNames.split(">");
+  let result = new Array();
+  targetDom(element, classArr, 0, result);
+}
+
+function targetDom(element, classArr, index, result) {
   if (!element) {
     return;
   }
-
-  let targetClass = classes[index];
-
-  if (index === classes.length - 1 && element.classList.contains(targetClass)) {
-    result.push(element.id);
+  let targetClass = classArr[index];
+  if (
+    index === classArr.length - 1 &&
+    element.classList.contains(targetClass)
+  ) {
+    result.push(element);
     return;
   }
 
-  for (const child of element.children) {
+  for (let child of element.children) {
     if (element.classList.contains(targetClass)) {
-      traverseDom(child, classes, index + 1, result);
+      targetDom(child, classArr, index + 1, result);
     } else {
-      traverseDom(child, classes, 0, result);
+      targetDom(child, classArr, 0, result);
     }
   }
 }
-console.log(
-  findElementbyClassName(document.getElementById("a-1"), "a>b>c"),
-  "className**",
-);
