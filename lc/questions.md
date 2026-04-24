@@ -26,9 +26,9 @@
 - valid_anagram 
 - longest_common_prefix
 - reverse_words_in_a_string
-- Remove Adjacent Duplicates in String
-- Valid Palindrome II
-- Longest Substring Without Repeating Characters
+- remove_adjacent_duplicates_in_string
+- valid_palindrome_II
+- longest_substring_without_repeating_characters
 - Minimum Window Substring
 - Group Anagrams
 - String to Integer (atoi)
