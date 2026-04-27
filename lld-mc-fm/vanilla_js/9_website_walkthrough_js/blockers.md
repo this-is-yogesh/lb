@@ -1,0 +1,1 @@
+explain the approach and write the solution

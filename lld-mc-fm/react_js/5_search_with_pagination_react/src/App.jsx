@@ -6,6 +6,8 @@ function App() {
   const [responseData, setResponseData] = useState([]);
   const [page, setPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
+  const [count, setCount] = useState(0);
+  /**changing count will re-render the parent but not image component as it is wrapped in memo */
   const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
   function makeApiCall() {
     let searchWord = !searchValue ? "" : searchValue;
@@ -62,6 +64,7 @@ function App() {
       makeApiCall();
     }
   }, [page, searchValue]);
+  console.log(count,'count')
 
   return (
     <div>
@@ -80,6 +83,7 @@ function App() {
             onChange={e => setSearchValue(e.target.value)}
           />
         </div>
+        <button onClick={() => setCount(count + 1)} style={{paddingTop:'20px'}}>Re-render parent{count}</button>
         {responseData?.length > 0 &&
           responseData?.map(data => {
             /**1-- {..data} is good way to pass props
