@@ -29,8 +29,8 @@
 - remove_adjacent_duplicates_in_string
 - valid_palindrome_II
 - longest_substring_without_repeating_characters
-- Minimum Window Substring
-- Group Anagrams
+- minimum_window_substring
+- group_anagrams
 - String to Integer (atoi)
 - Encode and Decode Strings
 - Count and Say
