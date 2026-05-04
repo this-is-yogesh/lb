@@ -1,0 +1,450 @@
+[
+  {
+    "title": "Currying - Part5 MakeMyTrip's JavaScript Interview Question",
+    "link": "https://www.youtube.com/watch?v=d1kfv9hnF0g"
+  },
+  {
+    "title": "I solved META's hard JavaScript interview question | Process Async Callback Queue",
+    "link": "https://www.youtube.com/watch?v=5FgOiXAUpkE"
+  },
+  {
+    "title": "Trickiest React problem for Fresher and SDE1 | Increment Counter",
+    "link": "https://www.youtube.com/watch?v=xueLGEE3SgQ"
+  },
+  {
+    "title": "I solved the Google L5 javascript Interview question",
+    "link": "https://www.youtube.com/watch?v=9SwDDaxcUV4"
+  },
+  {
+    "title": "Search with pagination in React | Frontend Machine Coding Interview Question - 62",
+    "link": "https://www.youtube.com/watch?v=BZ-SOzQfLK8"
+  },
+  {
+    "title": "Stepper component in React | Frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=D_aVRMu3acw"
+  },
+  {
+    "title": "Throttle an array of tasks | Uber frontend interview question",
+    "link": "https://www.youtube.com/watch?v=4iu9rQBCAGg"
+  },
+  {
+    "title": "useCopy() hook in React | React Machine Coding Question - 52",
+    "link": "https://www.youtube.com/watch?v=C1qOaRdSwwc"
+  },
+  {
+    "title": "Capture product visible in viewport - Part 2 using custom React hook",
+    "link": "https://www.youtube.com/watch?v=1zbHInhbIjA"
+  },
+  {
+    "title": "Capture product that user is focusing at | JavaScript Interview Question - 31",
+    "link": "https://www.youtube.com/watch?v=kjohGEZjco8"
+  },
+  {
+    "title": "Detect overlapping circle | Uber Frontend Interview Question | Q-30",
+    "link": "https://www.youtube.com/watch?v=bQpfb_aNohM"
+  },
+  {
+    "title": "Array with Event Listener | Frontend Interview Question - 28",
+    "link": "https://www.youtube.com/watch?v=3jKvw-iZOXk"
+  },
+  {
+    "title": "Generate CSS selector for the target DOM element | JavaScript Interview Question - 24",
+    "link": "https://www.youtube.com/watch?v=ql3TpOKHiL4"
+  },
+  {
+    "title": "Get Object Value From String Path |  JavaScript Interview Question - 34 | Learnersbucket",
+    "link": "https://www.youtube.com/watch?v=gXIHJCCDJPQ"
+  },
+  {
+    "title": "Animate progress bar in Sequence | NaVi UI - 2 Interview Question",
+    "link": "https://www.youtube.com/watch?v=EZBm0tgdnyQ"
+  },
+  {
+    "title": "Amazon Frontend machine coding Interview  | Find all the DOM elements with given property",
+    "link": "https://www.youtube.com/watch?v=EZnVU6D3XNQ"
+  },
+  {
+    "title": "Facebook (Meta) Frontend Interview Question | Create a polyfill of ReactDOM.render()",
+    "link": "https://www.youtube.com/watch?v=GKm4zBvCKqE"
+  },
+  {
+    "title": "Step-by-step website walk-through helper in JavaScript | Frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=Dr1-ixxYwdY"
+  },
+  {
+    "title": "Set value in object at string path | JavaScript Interview Question - 35 | Learnersbucket",
+    "link": "https://www.youtube.com/watch?v=NZ0JjE97P_U"
+  },
+  {
+    "title": "Dropbox frontend interview question | getByClassnameHeirarchy() | Interview Question 27",
+    "link": "https://www.youtube.com/watch?v=1p6Ow7qIH_k"
+  },
+  {
+    "title": "Handle Race Condition | React Interview Question - 36",
+    "link": "https://www.youtube.com/watch?v=_4Kjw_VVPHA"
+  },
+  {
+    "title": "Aggregate the Input values | Amazon frontend interview question | 37",
+    "link": "https://www.youtube.com/watch?v=tvvCFeBr1bY"
+  },
+  {
+    "title": "2 piping related question for JavaScript Interview | 38",
+    "link": "https://www.youtube.com/watch?v=jL6fLgf9Urw"
+  },
+  {
+    "title": "Cached API call | Atlassian frontend interview question | JavaScript Interview Question - 39",
+    "link": "https://www.youtube.com/watch?v=3jrfDk9k8rY"
+  },
+  {
+    "title": "Debounce function with leading and trailing options | JavaScript Interview Question - 40",
+    "link": "https://www.youtube.com/watch?v=8rPujr5rZtc"
+  },
+  {
+    "title": "useDebounce() Hook in React | React Interview Question - 41",
+    "link": "https://www.youtube.com/watch?v=2oattxIGYFE"
+  },
+  {
+    "title": "Search with Auto Suggestion | Frontend Machine Coding Question | JavaScript Interview Question - 42",
+    "link": "https://www.youtube.com/watch?v=_XOToOfrwtc"
+  },
+  {
+    "title": "Fetch with Timeout | JavaScript Interview Question - 43",
+    "link": "https://www.youtube.com/watch?v=KZgBVkr7DMY"
+  },
+  {
+    "title": "Auto suggestion in React | Machine coding question | JavaScript Interview Question - 44",
+    "link": "https://www.youtube.com/watch?v=vTLRpmNMQ8E"
+  },
+  {
+    "title": "Create analytics SDK ( Swiggy)  frontend interview question | JavaScript Interview Question - 46",
+    "link": "https://www.youtube.com/watch?v=0T3Qwtot9D0"
+  },
+  {
+    "title": "Infinite Scroll in React | Frontend Machine Coding Question | JavaScript Interview Question - 47",
+    "link": "https://www.youtube.com/watch?v=Ckka1HhE2kM"
+  },
+  {
+    "title": "Restrict Object Mutation in JavaScript | JavaScript Interview Question - 48",
+    "link": "https://www.youtube.com/watch?v=EU1Bs_F0fzo"
+  },
+  {
+    "title": "Get different object property value in each access | JavaScript Interview Question - 49",
+    "link": "https://www.youtube.com/watch?v=ERY9mSPpIOA"
+  },
+  {
+    "title": "Switch-Case component in React | Atlassian's React Machine Coding Question - 45",
+    "link": "https://www.youtube.com/watch?v=FCKLd38dIbs"
+  },
+  {
+    "title": "Create feature flag in React | Atlassian machine coding question",
+    "link": "https://www.youtube.com/watch?v=4lzn22noamY"
+  },
+  {
+    "title": "Circuit breaker in JavaScript | Atlassian interview question | Frontend interview question - 51",
+    "link": "https://www.youtube.com/watch?v=G_drlL4xrUs"
+  },
+  {
+    "title": "Create useWhyDidYouUpdate() hook in React | React Machine Coding interview question",
+    "link": "https://www.youtube.com/watch?v=T4f2YIESgXk"
+  },
+  {
+    "title": "3 different type of throttle function in JavaScript | JavaScript Interview Question - 53",
+    "link": "https://www.youtube.com/watch?v=r1_XSHKoBY8"
+  },
+  {
+    "title": "Highlight keywords on the webpage | JavaScript Interview question - 57",
+    "link": "https://www.youtube.com/watch?v=bTMEFFrupyY"
+  },
+  {
+    "title": "Code an In memory search engine | JavaScript Interview Question - 58",
+    "link": "https://www.youtube.com/watch?v=8I5RbXzhzKI"
+  },
+  {
+    "title": "Encode string with HTML tags at given characters | JavaScript Interview Question - 59",
+    "link": "https://www.youtube.com/watch?v=Yp2qvzkA1r8"
+  },
+  {
+    "title": "Singleton design pattern | Frontend System Design Question",
+    "link": "https://www.youtube.com/watch?v=PZlXG_-ZdfU"
+  },
+  {
+    "title": "Publisher-Subscriber Design Pattern in JavaScript | JavaScript Interview Question - 60",
+    "link": "https://www.youtube.com/watch?v=_gI-rIa6pGI"
+  },
+  {
+    "title": "Editable To-Do list in React | Frontend machine coding interview question - 61",
+    "link": "https://www.youtube.com/watch?v=pzj6ocsnHzw"
+  },
+  {
+    "title": "Responsive slideshow in Reactjs | React machine coding question - 63",
+    "link": "https://www.youtube.com/watch?v=YR36KuC4JVc"
+  },
+  {
+    "title": "Modal as functional component in React with backdrop | Reactjs machine coding question - 64",
+    "link": "https://www.youtube.com/watch?v=8kin62BmHHc"
+  },
+  {
+    "title": "Create a lightbox in Reactjs | Frontend Machine Coding Interview Question - 65",
+    "link": "https://www.youtube.com/watch?v=gPxT4pYumNk"
+  },
+  {
+    "title": "Proxy design pattern in JavaScript | JavaScript Interview Question - 66",
+    "link": "https://www.youtube.com/watch?v=Vgn38W7vC8I"
+  },
+  {
+    "title": "Execute promises (async function) in parallel | JavaScript Interview Question - 67",
+    "link": "https://www.youtube.com/watch?v=dXxQdjC-OwI"
+  },
+  {
+    "title": "Execute async tasks (promises) in Sequence | JavaScript Interview Question - 68",
+    "link": "https://www.youtube.com/watch?v=1BG3MBaeaMU"
+  },
+  {
+    "title": "How hard can be this JavaScript Interview Question from UBER?",
+    "link": "https://www.youtube.com/watch?v=6ZD9v7IMlFU"
+  },
+  {
+    "title": "Implement Resource pool pattern in JavaScript | Thoughtspot MTS-3 Interview Question",
+    "link": "https://www.youtube.com/watch?v=vSptzLGtRVc"
+  },
+  {
+    "title": "I coded this Image comparison slider in React",
+    "link": "https://www.youtube.com/watch?v=KpIlWGEgDvk"
+  },
+  {
+    "title": "Compose async functions with chaining support | Adobe MTS2 JavaScript interview question",
+    "link": "https://www.youtube.com/watch?v=rWFc0Nc1VNU"
+  },
+  {
+    "title": "ComposeAsync2 | Adobe MTS2 frontend interview question",
+    "link": "https://www.youtube.com/watch?v=zVvIn9aZLos"
+  },
+  {
+    "title": "Change color of the squares in the order clicked | Uber SDE2 Frontend Machine Coding (LLD)",
+    "link": "https://www.youtube.com/watch?v=WcbycB_qTNo"
+  },
+  {
+    "title": "I solved ZETA's SDE-1 frontend machine coding interview question (LLD)",
+    "link": "https://www.youtube.com/watch?v=Fx0v-YH8ZNc"
+  },
+  {
+    "title": "Sum up functions value running in parallel and in sequence | Intuit's frontend interview question",
+    "link": "https://www.youtube.com/watch?v=eRDXAsogUl4"
+  },
+  {
+    "title": "Stack With Min And Max methods | Microsoft SDE2 frontend DSA round.",
+    "link": "https://www.youtube.com/watch?v=PE0AWYw_Hos"
+  },
+  {
+    "title": "Postman SDE2 frontend machine coding question | Nested file/folder structure like Google drive",
+    "link": "https://www.youtube.com/watch?v=4J6MfgU1U40"
+  },
+  {
+    "title": "I took the Hive's Frontend Interview test | Create a PromiseSchedular that can be paused.",
+    "link": "https://www.youtube.com/watch?v=xNf_jEKz13Q"
+  },
+  {
+    "title": "Tab With Lazy Loading Children | Atlassian Principal Frontend Engineer Machine Coding Question",
+    "link": "https://www.youtube.com/watch?v=C09vyY9CwtE"
+  },
+  {
+    "title": "Create Stacked Snackbar in React | Razorpay's SDE2 frontend machine coding interview question.",
+    "link": "https://www.youtube.com/watch?v=LYaES2rBy0c"
+  },
+  {
+    "title": "I solved Palo-Alto Networks Senior Staff React machine coding interview question",
+    "link": "https://www.youtube.com/watch?v=fkoplqPbeUM"
+  },
+  {
+    "title": "Polyfills for Classnames in React | Meta (Facebook) JavaScript interview question",
+    "link": "https://www.youtube.com/watch?v=GZ0uRKjPqFQ"
+  },
+  {
+    "title": "Create Typing Test game in React | MakeMyTrip SDE2 frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=qbjX_EKdXiY"
+  },
+  {
+    "title": "useMemo() Polyfill | Thoughtspot MTS frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=tSPpWdx-0FE"
+  },
+  {
+    "title": "Infinite-Scroll with cursor-based pagination in React | Adobe's frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=BZWPXmwiFPU"
+  },
+  {
+    "title": "Evaluate performance of async and sync functions in JavaScript | Atlassian Principal Engineer",
+    "link": "https://www.youtube.com/watch?v=aJ0EWxzBHyc"
+  },
+  {
+    "title": "Print N-Array tree nodes with level indentation | Palo Alto Networks Staff Frontend Interview",
+    "link": "https://www.youtube.com/watch?v=ydCbmfIHUBU"
+  },
+  {
+    "title": "I solved Okta's SDE2 React machine coding question | Grid with incremental values",
+    "link": "https://www.youtube.com/watch?v=afn9EbHGyoo"
+  },
+  {
+    "title": "Draw Circles on click with Undo, Redo, & Reset actions | Hiver's SDE2 frontend interview question",
+    "link": "https://www.youtube.com/watch?v=TlihJcIebVQ"
+  },
+  {
+    "title": "Pagination with ellipsis in page gaps | MakeMyTrip SDE2 frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=xS0dxJbcWoM"
+  },
+  {
+    "title": "Nested Accordion in React | Apple Ic3 frontend interview question",
+    "link": "https://www.youtube.com/watch?v=MrnmhYy5IoA"
+  },
+  {
+    "title": "List Virtualisation with scroll event in JavaScript | ArcticWolf's frontend interview question",
+    "link": "https://www.youtube.com/watch?v=q9Xod99EmfY"
+  },
+  {
+    "title": "List Virtualisation with intersection observer in JavaScript | ArcticWolf's interview question",
+    "link": "https://www.youtube.com/watch?v=AkI90RGs4bw"
+  },
+  {
+    "title": "Map With EventListener | Airbnb's frontend interview question",
+    "link": "https://www.youtube.com/watch?v=ehHggQHzuZk"
+  },
+  {
+    "title": "Stopwatch in React | Grok, Twitter, xAI Frontend interview question",
+    "link": "https://www.youtube.com/watch?v=gusofDOzwAM"
+  },
+  {
+    "title": "Implement LRU cache in JavaScript | Flipkart's frontend interview question",
+    "link": "https://www.youtube.com/watch?v=NmhGrl5ge4A"
+  },
+  {
+    "title": "useEffect() polyfill in React | Microsoft's SDE2 frontend interview question",
+    "link": "https://www.youtube.com/watch?v=5eeog2CdWns"
+  },
+  {
+    "title": "2-step product rating and review page | Flipkart's UI-2 frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=HUqWXmwiG9A"
+  },
+  {
+    "title": "HLD of nested checkbox component in React | Apple's frontend interview question",
+    "link": "https://www.youtube.com/watch?v=kVo4mJMsPs0"
+  },
+  {
+    "title": "HLD of Queued Chat UI Like Claude And ChatGPT | EmergentLabs SDE3 frontend interview question",
+    "link": "https://www.youtube.com/watch?v=E9hgm2UKhqE"
+  },
+  {
+    "title": "HLD of Select dropdown with search along with handling large list options in React",
+    "link": "https://www.youtube.com/watch?v=MvKYv-yVUdI"
+  },
+  {
+    "title": "Pausable auto incrementor | JavaScript Interview Question - 25",
+    "link": "https://www.youtube.com/watch?v=tf6Zc5kTS30"
+  },
+  {
+    "title": "Custom array iterator method | JavaScript Interview Question - 22",
+    "link": "https://www.youtube.com/watch?v=jYmG4nbrmOw"
+  },
+  {
+    "title": "Implement Browser History Navigation | JavaScript Interview Question - 21",
+    "link": "https://www.youtube.com/watch?v=R_76ajyvDV4"
+  },
+  {
+    "title": "JavaScript Interview Question - 18 | Deep flatten an object",
+    "link": "https://www.youtube.com/watch?v=z3isDlyMqog"
+  },
+  {
+    "title": "A leaner's guide to Closure in JavaScript",
+    "link": "https://www.youtube.com/watch?v=Tsts251DuXk"
+  },
+  {
+    "title": "Prepare for your JavaScript Interview at product-based org",
+    "link": "https://www.youtube.com/watch?v=_sDXpUqqD5w"
+  },
+  {
+    "title": "Remove cycle from Object |  SDE2 & SDE3 | JavaScript Interview Question - 12",
+    "link": "https://www.youtube.com/watch?v=MHW8tGONRtk"
+  },
+  {
+    "title": "Memoize Any function | JavaScript Interview Question - 7",
+    "link": "https://www.youtube.com/watch?v=ktL5L2DnYYg"
+  },
+  {
+    "title": "Curry Function - 4 | Hard | JavaScript Interview Question - 6",
+    "link": "https://www.youtube.com/watch?v=qONGx06Z4_A"
+  },
+  {
+    "title": "Curry Function - 3 | Hard | JavaScript Interview Question - 5",
+    "link": "https://www.youtube.com/watch?v=gytPGYlK8gI"
+  },
+  {
+    "title": "Curry Function - 2 | Medium | Learnersbucket | JavaScript Interview Question - 4",
+    "link": "https://www.youtube.com/watch?v=7me5z_QNN1M"
+  },
+  {
+    "title": "Implement clearAllTimeout | JavaScript Interview Question | Learnersbucket",
+    "link": "https://www.youtube.com/watch?v=XPJFU2zwotc"
+  },
+  {
+    "title": "Curry Function - 1 | JavaScript Interview Question - 3",
+    "link": "https://www.youtube.com/watch?v=QJkltlNkmqs"
+  },
+  {
+    "title": "Sampler Function | JavaScript Interview Question - 2",
+    "link": "https://www.youtube.com/watch?v=e8ZgzldSwYo"
+  },
+  {
+    "title": "Toggle Functions Arguments | JavaScript Interview Question - 1",
+    "link": "https://www.youtube.com/watch?v=PacCqVMiS6Y"
+  },
+  {
+    "title": "Request and Response Interceptor | JavaScript Interview Question",
+    "link": "https://www.youtube.com/watch?v=Y7IYt3--Ivk"
+  },
+  {
+    "title": "Create a localstorage with expiry time | JavaScript Interview Question - 23",
+    "link": "https://www.youtube.com/watch?v=ENTl51PsLM8"
+  },
+  {
+    "title": "Dropbox frontend interview question | polyfill for getElementByClassname() | Question 26",
+    "link": "https://www.youtube.com/watch?v=3b35wf3CLeQ"
+  },
+  {
+    "title": "I solved the Docusign SDE -1 Interview Question | Mutual friends",
+    "link": "https://www.youtube.com/watch?v=QZ5_YL5z3eI"
+  },
+  {
+    "title": "I solved the Flipkart UI -1 Interview Question | Piping Function",
+    "link": "https://www.youtube.com/watch?v=anvBprk5q-c"
+  },
+  {
+    "title": "Frontend Interview Question at Amazon Seattle | Filter Nested Objects",
+    "link": "https://www.youtube.com/watch?v=XMEYVsxelxk"
+  },
+  {
+    "title": "AWS Frontend Interview Question | Get object value from string path",
+    "link": "https://www.youtube.com/watch?v=h1NYagkZ3hk"
+  },
+  {
+    "title": "Method chaining | Asked in Navi for UI Engineer - 2 | JavaScript Interview Question - 8",
+    "link": "https://www.youtube.com/watch?v=aAJ_P8-84ac"
+  },
+  {
+    "title": "I solved this frontend interview question from META | Custom ReactDOM.Render() function.",
+    "link": "https://www.youtube.com/watch?v=45CoiSAID2Q"
+  },
+  {
+    "title": "Create useToggle() hook in Reactjs | Frontend Interview Question 29",
+    "link": "https://www.youtube.com/watch?v=xZxZFX-QEFE"
+  },
+  {
+    "title": "Custom browser cookie | JavaScript Interview Question - 33",
+    "link": "https://www.youtube.com/watch?v=21rvzoieIU0"
+  },
+  {
+    "title": "Javascript revision & interview cheat sheet | Watch this before your interview.",
+    "link": "https://www.youtube.com/watch?v=xejr5Uv_sAQ"
+  },
+  {
+    "title": "Switch Case component in React | Tricky frontend machine coding question",
+    "link": "https://www.youtube.com/watch?v=-E7EfsOhr5s"
+  }
+]
