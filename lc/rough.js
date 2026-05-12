@@ -81,34 +81,3 @@ Reading stops at the first non-digit character 'w'.
  */
 
 
-function stringToInteger(s) {
-    let i = 0;
-    let sign = 1;
-    let result = 0;
-    const INT_MAX = 2 ** 31 - 1;
-    const INT_MIN = -(2 ** 31);
-
-    // Step 1: Ignore leading whitespace
-    while (i < s.length && s[i] === ' ') {
-        i++;
-    }
-
-    // Step 2: Check for sign
-    if (i < s.length && (s[i] === '-' || s[i] === '+')) {
-        sign = s[i] === '-' ? -1 : 1;
-        i++;
-    }
-
-    // Step 3: Read digits and convert to integer
-    while (i < s.length && s[i] >= '0' && s[i] <= '9') {
-        const digit = s[i] - '0';
-        // Check for overflow and underflow
-        if (result > Math.floor((INT_MAX - digit) / 10)) {
-            return sign === 1 ? INT_MAX : INT_MIN;
-        }
-        result = result * 10 + digit;
-        i++;
-    }
-
-    return sign * result;
-}

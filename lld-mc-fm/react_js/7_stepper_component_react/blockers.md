@@ -1,6 +1,7 @@
 1. how to use cloneElement
 
 
+React.cloneElement extends the components that are passed as objects and pass the new props to them.
 cloneElement always expects one react element
 function Wrapper({ children }) {
   return React.cloneElement(children, {
