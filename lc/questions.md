@@ -105,9 +105,9 @@ optimised list
 
 
 random order :
-1. Kth Largest Element
-2. Valid Palindrome II
-3. Reverse Linked List
+1. kth_largest_element_in_an_array
+2. valid_palindrome_II
+3. reverse_linked_list
 4. Top K Frequent Elements
 5. Binary Search
 6. Longest Substring Without Repeating Characters

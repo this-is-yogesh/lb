@@ -1,5 +1,4 @@
-/**
- * 
+/** 
  * Given a string s, return true if the s can be palindrome after deleting at most one character from it.
 
  
@@ -19,26 +18,36 @@ Input: s = "abc"
 Output: false
  */
 
-var validPalindrome = function (s) {
-  let i = 0;
-  let j = s.length - 1;
-
-  while (i < j) {
-    if (s[i] !== s[j]) {
-      return isPalindrome(s, i + 1, j) || isPalindrome(s, i, j - 1);
+/** how will we solve this, so we will a run a two pointer ofcourse from both ends, the first end then the moment
+ * we get diffrent values on both pointers, means palindrome was not respected so will, take the presnet left value and the right - 1 value
+ * and go for the palindrome check and also check the left + 1 value and current right value, that way we will make sure,
+ * that we give another chance to check if palindrome exist now and if now also it doesnt respect ,will return false
+ */
+function findValindPalindrome(str) {
+  let left = 0;
+  let right = str.length - 1;
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return (
+        checkPalindrome(left + 1, right, str) ||
+        checkPalindrome(left, right - 1, str)
+      );
     }
-    i++;
-    j--;
+    left++;
+    right--;
   }
   return true;
-};
-
-function isPalindrome(s, i, j) {
-  while (i < j) {
-    if (s[i] !== s[j]) return false;
-    i++;
-    j--;
-  }
-  return true
 }
-console.log(validPalindrome("eccer"));
+
+function checkPalindrome(left, right, str) {
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+console.log(findValindPalindrome("abca"));
