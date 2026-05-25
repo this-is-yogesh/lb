@@ -108,10 +108,10 @@ random order :
 1. kth_largest_element_in_an_array
 2. valid_palindrome_II
 3. reverse_linked_list
-4. Top K Frequent Elements
-5. Binary Search
-6. Longest Substring Without Repeating Characters
-7. Merge Intervals
+4. top_k_frequent_elements
+5. binary_search
+6. longest_substring_without_repeating_characters
+7. merge_intervals
 8. Maximum Depth of Binary Tree
 9. Product of Array Except Self
 10. Valid Parentheses
@@ -240,10 +240,10 @@ random order :
 
 
 3. Stack & Monotonic Stack 
-- Valid Parentheses
-- Remove Adjacent Duplicates
-- Min Stack
-- Next Greater Element I
+- valid_parentheses
+- remove_all_adjacent_duplicates
+- min_stack
+- next_greater_element_I
 - Next Greater Element II
 - Next Smaller Element
 - Daily Temperatures

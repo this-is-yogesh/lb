@@ -25,35 +25,50 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
-    let map = new Map();
-    let max = -1;
-    let j = 0;
 
-    for (let i = 0; i < s.length; i++) {
-        if (map.has(s[i])) {
-            max = Math.max(max, map.size);
-            while (j <= map.get(s[i]) && j < s.length) {
-                map.delete(s[j]);
-                j++;
-            }
-            map.set(s[i], i)
+//my approach: using set to store the unique characters, if we encounter a duplicate character, we will remove all the characters until we find the duplicate character and then add the duplicate character to the set, and keep track of the maximum size of the set at each step.
+//time complexity can be O(n2) in the worst case when the character repeats only at the end and we had to remove all the characters from the set
+//example :a,b,c,d,e,f,g,a
 
-        } else {
-            map.set(s[i], i)
-
-        }
+function lengthOfLongestSubstring(s) {
+  let set = new Set();
+  let maxSize = 0;
+  let j = 0;
+  for (let num of s) {
+    if (!set.size) {
+      set.add(num);
+      continue;
     }
-    max = Math.max(max, map.size);
-    return max === -1 ? s.length : max;
-};
-/**
- *  Why it’s still O(n) despite the loop
 
-Think of it like:
+    if (set.has(num)) {
+      for (let value of set) {
+        if (value === num) {
+          set.delete(value);
+          break;
+        } else {
+          set.delete(value);
+        }
+      }
+    }
+    set.add(num);
+    maxSize = Math.max(maxSize, set.size);
+  }
+  return !maxSize ? s.length : maxSize;
+  console.log(set, maxSize);
+}
 
-The while loop doesn’t restart from 0 every time
-It continues from where j left off
-
-So across the whole program, j++ happens at most n times total
- */
+// so optimal would be to use left and right pointer with set
+function lengthOfLongestSubstring(s) {
+  let set = new Set();
+  let maxSize = 0;
+  let left = 0;
+  for (let right = 0; right < s.length; right++) {
+    while (set.has(s[right])) {
+      set.delete(s[left]);
+      left++;
+    }
+    set.add(s[right]);
+    maxSize = Math.max(maxSize, right - left + 1);
+  }
+  return maxSize;
+}

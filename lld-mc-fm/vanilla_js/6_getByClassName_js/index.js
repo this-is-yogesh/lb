@@ -1,3 +1,25 @@
+// my solution:
+
+function findByClass(targetClass) {
+  let result = new Array();
+
+  function findTargetClass(node) {
+    if (node.classList.contains(targetClass)) {
+      result.push(node.id);
+    }
+
+    let children = Array.from(node.children);
+    if (!children.length) {
+      return;
+    }
+    for (let child of children) {
+      findTargetClass(child);
+    }
+  }
+  findTargetClass(document.body);
+  return result;
+}
+
 function findByClass(className) {
   let root = document.body;
   let result = new Array();

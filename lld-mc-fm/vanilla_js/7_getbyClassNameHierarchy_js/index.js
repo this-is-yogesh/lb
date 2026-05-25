@@ -1,29 +1,31 @@
-getElementByClassNameHierarchy(document.getElementById("root"), "a>b>c");
-
-function getElementByClassNameHierarchy(element, classNames) {
-  let classArr = classNames.split(">");
+//true direct hierarchy match
+function getByClassNameHierarchy(stringPath) {
+  let arrPath = stringPath.split(">");
+  let index = 0;
   let result = new Array();
-  targetDom(element, classArr, 0, result);
-}
 
-function targetDom(element, classArr, index, result) {
-  if (!element) {
-    return;
-  }
-  let targetClass = classArr[index];
-  if (
-    index === classArr.length - 1 &&
-    element.classList.contains(targetClass)
-  ) {
-    result.push(element);
-    return;
-  }
+  function findLastElement(node, index) {
+    if (
+      node.classList.contains(arrPath[index]) &&
+      index === arrPath.length - 1
+    ) {
+      result.push(node.id);
+      return;
+    }
+    if (node.classList.contains(arrPath[index])) {
+      index++;
+    } else if (index > 0) {
+      //this is the key
+      return;
+    }
 
-  for (let child of element.children) {
-    if (element.classList.contains(targetClass)) {
-      targetDom(child, classArr, index + 1, result);
-    } else {
-      targetDom(child, classArr, 0, result);
+    for (let child of node.children) {
+      console.log(node.id, child.id, index);
+      findLastElement(child, index);
     }
   }
+  findLastElement(document.body, index);
+  console.log(result);
 }
+
+getByClassNameHierarchy("a>c");
