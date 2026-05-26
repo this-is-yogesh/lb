@@ -44,6 +44,21 @@ var nextGreaterElement = function (nums1, nums2) {
   }
   return nums1;
 };
+
+//optimal
+
+	function nextSmallerEle(nums) {
+    let ans = new Array(nums.length).fill(-1);
+    let stack = new Array();
+    for (let i = 0; i < nums.length; i++) {
+      while (stack.length && nums[i] > nums[stack[stack.length - 1]]) {
+        let topIndex = stack.pop();
+        ans[topIndex] = nums[i];
+      }
+      stack.push(i);
+    }
+    return ans;
+  }
 /** this monotonic stack is in strictly decreasing order, meaning any future element 
  * that is greater than the top of the stack will pop all elements smaller than it until it finds a greater element or the stack is empty.
  */

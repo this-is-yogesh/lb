@@ -244,9 +244,9 @@ random order :
 - remove_all_adjacent_duplicates
 - min_stack
 - next_greater_element_I
-- Next Greater Element II
-- Next Smaller Element
-- Daily Temperatures
+- next_greater_element_II
+- next_smaller_element_I
+- daily_temperatures
 - Remove K Digits
 - Asteroid Collision
 - Car Fleet
