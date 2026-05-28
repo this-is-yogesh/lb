@@ -1,4 +1,6 @@
-1. What if you have been given bunch of apis and you have to execute them in sequence one after the other ?
+**Async await behaviour**
+
+What if you have been given bunch of apis and you have to execute them in sequence one after the other ?
 
 Promises and async/await
 ans 1. When multiple API calls need to execute sequentially, we can leverage Promises and async/await.
@@ -48,6 +50,7 @@ NOT the JS engine
 
 
 
+**new Promise vs Promise.resovle()**
 new Promise(()=>{}) vs Promise.resolve().then(()=>{})
 
 new Promise creates a promise and contructor itself is synchronous but Promise.resolve, promise is already created, now it tells what to do about consumption in .then 
@@ -75,20 +78,16 @@ sync
 then
 
 
+**Event Loop Tracing of Promise and setTimeout**
 
 event loop in promises
 const asyncTask = function(i) {
-
   return function() {
-
     return new Promise((resolve, reject) => {
-
       setTimeout(() => {
         resolve(`Completing ${i}`);
       }, 100 * i);
-
     });
-
   }
 
 }
@@ -120,17 +119,17 @@ Microtask Queue:
 And:
 
 microtasks ALWAYS execute before next macrotask
-
 This is the heart of async JS.
-
 
 when we enter the new Promise the sync code gets executed and now we see that there is setTimeout, so its timer is registered with WEB api ( web apis run in parallel to the js engine) , promise is in pending state right now 
 when timer finishes after 300 ms setTimeout callback is pushed into macrotask queue by browser, queue will look like this 
 [
   () => resolve("Completing 3")
 ]
-then event loop picks mactrostask queue tasks since callstack is empty and event loop pushes callback into callstack then it will execute callback which resolves promise  and now promise is in fulfilled statea and after resolve the code waiting on that proimse whether it is .then or the paused async code after await goes into microtask queue to be executed ,like here console.log(result) will be scheduled in microtask queue , so now event loop priotises the code in microqueue and then moves it into callstack and executes it in callstack
+then event loop picks mactrostask queue tasks since callstack & microtask queue is empty and event loop pushes callback into callstack then it will execute callback which resolves promise  and now promise is in fulfilled statea and after resolve the code waiting on that proimse whether it is .then or the paused async code after await goes into microtask queue to be executed ,like here console.log(result) will be scheduled in microtask queue , so now event loop priotises the code in microqueue and then moves it into callstack and executes it in callstack
 
+
+**Web APIS**
 
 Web APIs are provided by the browser/runtime and execute outside the JavaScript call stack. While JavaScript continues executing synchronous code, browser-managed async operations like timers, network requests, and DOM events progress independently. Once completed, their callbacks are queued for the event loop to process.
 
@@ -156,3 +155,19 @@ WebSocket	- realtime connection
 
 
 forever pending state promise = new Promise((res,rej)=>console.log('hi'))
+
+
+**Promise return Concept**
+  return acc
+    .then(res => {
+      return curr().then(resp => {
+        return resp + 12;
+      });
+    })
+
+means return curr().then(resp => {
+        return resp + 12;
+      }); 
+so it return Promise.resolve(resp+12) 
+and acc.then return Promise.resolve(resp+12) 
+so final value returned will be Promise.resolve(resp+12) 
