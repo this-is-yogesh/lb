@@ -248,7 +248,7 @@ random order :
 - next_smaller_element_I
 - daily_temperatures
 - remove_k_digits
-- Asteroid Collision
+- asteroid_collision
 - Car Fleet
 - Simplify Path
 - Evaluate Reverse Polish Notation
