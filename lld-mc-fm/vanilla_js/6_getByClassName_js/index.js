@@ -1,3 +1,48 @@
+/**
+ * Problem Statement:
+ * Write a custom function to find all the elements with the given class in the DOM. Simply put, write the polyfill for the getElementByClassName();
+ * 
+ * Input:
+<div class='a' id="root">
+  <div class='b' id='b-1'>
+    <div class='a' id='a-2'>
+      <div class='d' id='d-1'></div>
+    </div>
+    <div class='c' id='c-1'>
+      <div class='a' id='a-3'>
+        <div class='d' id='d-2'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+findByClass('a');
+
+Output:
+[<div class="a" id="root">
+  <div class="b" id="b-1">
+    <div class="a" id="a-2">
+      <div class="d" id="d-1"></div>
+    </div>
+    <div class="c" id="c-1">
+      <div class="a" id="a-3">
+        <div class="d" id="d-2"></div>
+      </div>
+    </div>
+  </div>
+</div>,
+<div class="a" id="a-2">
+      <div class="d" id="d-1"></div>
+</div>,
+<div class="a" id="a-3">
+       <div class="d" id="d-2"></div>
+</div>
+]
+
+
+Write polyfill for document.getElementsByClassName("a"), custom function should be findByClass("a")
+ */
+
 // my solution:
 
 function findByClass(targetClass) {
@@ -19,23 +64,6 @@ function findByClass(targetClass) {
   findTargetClass(document.body);
   return result;
 }
-
-function findByClass(className) {
-  let root = document.body;
-  let result = new Array();
-
-  function search(node) {
-    if (node.classList.contains(className)) {
-      result.push(node);
-    }
-    console.log("node-1", node);
-    for (let child of node.children) {
-      search(child);
-    }
-    console.log("node-2", node);
-    return result;
-  }
-  return search(root);
-}
+//standard Preorder DFS Traversal used here
 
 console.log(findByClass("a"), "res$");
