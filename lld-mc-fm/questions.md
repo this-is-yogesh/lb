@@ -1,4 +1,4 @@
-*6 - multi stepper component
+6 - multi stepper component
 20 - getByClassName Hierarchy
 50 - execute async task (promises) in sequence
 53 - image comparison slider react
