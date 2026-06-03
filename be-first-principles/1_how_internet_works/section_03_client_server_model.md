@@ -1,3 +1,36 @@
+
+Client-Server Model
+The client-server model is the foundation of most systems.
+Client: Initiates requests.
+Server: Processes requests and returns responses.
+
+Examples
+Clients
+
+Browser
+Mobile apps
+Desktop apps
+Other servers
+
+Servers
+Web Server → Serves static files
+Application Server → Runs business logic
+Database Server → Stores data
+
+Key Differences
+Client	Server
+Sends requests |	Waits for requests
+Millions of users	| Few servers
+Runs on user devices	| Runs in data centers
+Can go offline	| Must be highly available
+
+Remember
+Client asks, Server answers.
+
+Client → Request → Server
+Client ← Response ← Server
+
+
 **SECTION 3 - Client Server Model**
 
 

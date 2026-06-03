@@ -1,3 +1,58 @@
+# Client-Server Model at Scale
+Basic architecture:
+
+```text
+Many Clients
+      ↓
+    Server
+      ↓
+   Database
+```
+
+A single server works well for small systems, but it cannot handle millions of users.
+
+## The Core Problem
+
+**System Design = How do we serve millions of clients reliably and efficiently?**
+
+## Scaling the Architecture
+
+The client-server model itself doesn't change. We add more components to scale it:
+
+- **Load Balancers** → Distribute traffic across multiple servers.
+- **Caches** → Reduce database load.
+- **Databases** → Store data separately.
+- **CDNs** → Serve content closer to users.
+
+## Evolution of Architecture
+
+Simple system:
+
+```text
+Clients
+   ↓
+Server
+   ↓
+Database
+```
+
+Scaled system:
+
+```text
+Clients
+   ↓
+Load Balancer
+   ↓
+Multiple Servers
+   ↓
+Cache / Database / CDN
+```
+
+## Key Takeaway
+
+> System Design is fundamentally about scaling the simple **Client → Server → Database** architecture.
+
+
 **SECTION 3B - client server model continued**
 
 

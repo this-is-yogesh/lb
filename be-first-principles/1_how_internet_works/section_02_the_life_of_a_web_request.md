@@ -1,3 +1,45 @@
+# Section 2: How the Internet Works
+
+Before designing systems, we must understand how data moves between machines. Almost every application—chat apps, video platforms, payment systems, etc.—uses the same underlying concepts.
+
+## Topics Covered
+- Client-Server Model
+- DNS
+- IP Addresses and Ports
+- TCP and UDP
+- HTTP and HTTPS
+- Request-Response Lifecycle
+- Latency and Round-Trip Time (RTT)
+
+## Why This Matters
+These concepts directly affect:
+- Scalability
+- Performance
+- Reliability
+- API design
+- Caching
+- Server placement
+
+## The Big Question
+
+When you tap a YouTube video, how does it reach your screen?
+
+The request travels through multiple layers:
+
+User
+→ DNS
+→ TCP/TLS
+→ HTTP Request
+→ Load Balancer
+→ Application Server
+→ Database/CDN
+→ Response
+
+Understanding this journey is the foundation of System Design.
+
+
+
+
 **Section 2: The Life of a Web Request**
 
 Before designing complex systems, it is important to understand how the internet moves data between machines. Every system (chat app, video platform, payment service) relies on the same core mechanics.

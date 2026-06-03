@@ -1,3 +1,130 @@
+# UDP (User Datagram Protocol)
+
+UDP is a transport protocol that prioritizes **speed** over reliability.
+Unlike TCP, UDP sends data immediately without establishing a connection.
+
+## UDP Flow
+
+```text
+Client → Server : Data
+
+(No handshake)
+(No acknowledgment)
+(No retransmission)
+```
+
+If packets are lost or arrive out of order, UDP does not fix them.
+
+---
+
+## UDP Characteristics
+
+- No connection setup
+- No delivery guarantee
+- No ordering guarantee
+- No congestion control
+- Very low overhead
+
+---
+
+## TCP vs UDP
+
+| TCP | UDP |
+|------|-----|
+| Reliable | Fast |
+| Ordered delivery | No ordering guarantee |
+| Retransmits lost packets | No retransmission |
+| Connection-oriented | Connectionless |
+| Higher overhead | Minimal overhead |
+
+---
+
+## Choosing Between TCP and UDP
+
+### Use TCP when reliability matters
+
+- Web browsing (HTTP/HTTPS)
+- APIs
+- Database queries
+- File downloads
+
+**Requirement:** Every byte must arrive correctly.
+
+---
+
+### Use UDP when latency matters
+
+- Video calls
+- Voice calls
+- Online gaming
+- Live streaming
+- IoT telemetry
+- DNS lookups
+
+**Requirement:** Current data is more important than perfect delivery.
+
+---
+
+## System Design Relevance
+
+Most backend systems communicate over **TCP**:
+
+- HTTP/HTTPS
+- gRPC
+- Database connections
+
+UDP is commonly used for:
+
+- Live video/audio streaming
+- Multiplayer gaming
+- IoT systems
+
+---
+
+## Hybrid Approach
+
+### Pre-recorded video (YouTube, Netflix)
+
+Uses **TCP**.
+
+```text
+Video
+↓
+Split into chunks
+↓
+Downloaded over HTTP/TCP
+↓
+Buffered
+↓
+Played
+```
+
+Small delays are acceptable.
+
+---
+
+### Real-time communication (Zoom, Teams)
+
+Uses **UDP**.
+
+```text
+Camera
+↓
+Packet sent immediately
+↓
+Receiver
+```
+
+Dropped frames are better than delayed frames.
+
+---
+
+## Rule of Thumb
+
+> TCP when reliability matters.
+>
+> UDP when latency matters.
+
 **SECTION 6B - UDP and Protocol Selection**
 
 UDP (User Datagram Protocol)

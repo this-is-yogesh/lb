@@ -1,3 +1,92 @@
+# IP Addresses and Ports
+
+To establish a connection, we need:
+
+1. **IP Address** → Which machine?
+2. **Port Number** → Which application on that machine?
+
+## IP Address
+An IP address uniquely identifies a machine on the internet.
+
+- **IPv4**: ~4.3 billion addresses
+- **IPv6**: Vastly larger address space
+
+Most systems support both IPv4 and IPv6.
+
+### Analogy
+
+> IP Address = Building Address
+
+---
+
+## Port Number
+
+A machine can run multiple applications simultaneously.
+Ports tell the operating system which application should receive the request.
+
+### Common Ports
+
+| Port | Service |
+|--------|---------|
+| 80 | HTTP |
+| 443 | HTTPS |
+| 22 | SSH |
+| 5432 | PostgreSQL |
+| 6379 | Redis |
+| 3306 | MySQL |
+| 27017 | MongoDB |
+
+### Analogy
+
+> Port = Apartment Number
+
+---
+
+## Putting It Together
+
+When you open YouTube:
+
+```text
+youtube.com
+      ↓
+DNS
+      ↓
+142.250.80.46
+      ↓
+142.250.80.46:443
+```
+
+```text
+IP Address + Port
+```
+
+is the complete destination.
+
+### Analogy
+
+```text
+Building Address + Apartment Number
+```
+
+---
+
+## System Design Relevance
+
+Multiple services can run on the same machine, each listening on a different port.
+
+Examples:
+
+- PostgreSQL → Port 5432
+- Redis → Port 6379
+- MySQL → Port 3306
+
+This allows different applications to coexist and communicate independently.
+
+---
+
+> IP identifies the machine; Port identifies the service running on that machine.
+
+
 **SECTION 5 - IP Addresses and Ports**
 
 What are IP Addresses and Ports?

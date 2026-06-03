@@ -55,8 +55,8 @@
 - remove_k_digits
 - asteroid_collision
 - car_fleet
-- Simplify Path
-- Evaluate Reverse Polish Notation
+- simplify_path
+- evaluate_reverse_polish_notation
 - Basic Calculator
 - Largest Rectangle in Histogram
 

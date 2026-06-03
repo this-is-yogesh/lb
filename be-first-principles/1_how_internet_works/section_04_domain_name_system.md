@@ -1,3 +1,45 @@
+
+# DNS (Domain Name System)
+
+DNS translates domain names into IP addresses.
+
+```text
+youtube.com
+     ↓
+142.250.80.46
+```
+
+### Analogy
+
+DNS is the internet's phone book.
+
+- Name → Domain name
+- Phone number → IP address
+
+### Why DNS Exists
+
+- Domain names are easier to remember.
+- IP addresses can change.
+- One domain can map to many servers.
+- DNS helps route users to nearby servers.
+
+### Common DNS Records
+
+| Record | Purpose |
+|----------|---------|
+| A | Domain → IPv4 address |
+| AAAA | Domain → IPv6 address |
+| CNAME | Alias to another domain |
+| MX | Mail server |
+| NS | Authoritative name server |
+
+### Key Takeaway
+
+> DNS = Domain Name → IP Address
+
+Without DNS, we would have to remember IP addresses instead of domain names.
+
+
 **SECTION 4 - Domain Name System ( DNS )**
 
 When you type a domain name like youtube.com into your browser, your computer needs to find the actual IP address of YouTube’s server to connect to it. Computers communicate using IP addresses (for example, 142.250.80.46), not human-readable names. DNS is the system responsible for translating domain names into their corresponding IP addresses.

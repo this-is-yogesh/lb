@@ -1,3 +1,128 @@
+# TCP (Transmission Control Protocol)
+
+TCP is a transport protocol that prioritizes **reliability**.
+
+Before sending data, TCP establishes a connection between the client and server.
+
+## TCP Connection Setup
+
+### Three-Way Handshake
+
+```text
+Client → Server : SYN
+Server → Client : SYN-ACK
+Client → Server : ACK
+
+Connection Established
+```
+
+Only after this handshake can data be transmitted.
+
+### Cost
+
+- Extra latency before data transfer
+- Multiple acknowledgements
+- Retransmission of lost packets
+- Additional protocol overhead
+
+---
+
+## TCP Guarantees
+
+### 1. Ordered Delivery
+
+Packets arrive in the same order they were sent.
+
+```text
+Sent:     A → B → C
+Received: A → B → C
+```
+
+---
+
+### 2. Reliable Delivery
+
+If a packet is lost, TCP automatically retransmits it.
+
+```text
+A → B → X → D
+
+Packet C lost
+↓
+TCP retransmits C
+↓
+A → B → C → D
+```
+
+---
+
+### 3. Error Detection
+
+Corrupted packets are detected and resent.
+
+---
+
+### 4. Flow Control
+
+If the receiver is slow, TCP reduces the sending rate.
+
+```text
+Fast Sender
+     ↓
+Slow Receiver
+
+TCP slows down transmission
+```
+
+---
+
+### 5. Congestion Control
+
+If the network is congested, TCP reduces traffic to avoid overload.
+
+---
+
+## Why TCP Exists
+
+TCP ensures:
+
+- Data is not lost
+- Data arrives in order
+- Data is not corrupted
+
+This makes it ideal for:
+
+- Web browsing
+- APIs
+- Banking systems
+- Database communication
+- File downloads
+
+---
+
+## Limitation
+
+Reliability comes at the cost of speed.
+For real-time applications (video calls, gaming), an old packet is often useless.
+
+Example:
+
+```text
+Video frame lost
+↓
+TCP retransmits after delay
+↓
+Frame arrives 2 seconds later
+↓
+Too late to be useful
+```
+
+In such cases, speed is more important than perfect reliability.
+
+---
+
+> TCP = Reliable, Ordered, Connection-Oriented Communication
+
 **SECTION 6 - TCP**
 
 What are TCP and UDP?

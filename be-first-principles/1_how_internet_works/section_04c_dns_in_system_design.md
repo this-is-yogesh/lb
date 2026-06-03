@@ -1,3 +1,68 @@
+# DNS in System Design
+
+DNS is not just for translating names to IP addresses. It is the first layer of traffic routing.
+
+## Uses of DNS
+### 1. Global Load Balancing
+
+DNS can return different IP addresses based on user location.
+
+```text
+India  → Mumbai DC
+USA    → Iowa DC
+Europe → Belgium DC
+```
+
+Same domain, different servers.
+
+**Purpose:** Route users to the nearest data center.
+---
+
+### 2. Failover
+```text
+Normal:
+youtube.com → Primary Server
+
+Primary fails
+↓
+DNS updated
+
+youtube.com → Backup Server
+```
+
+#### TTL Tradeoff
+
+- Low TTL → Faster failover, more DNS queries
+- High TTL → Fewer DNS queries, slower failover
+
+---
+
+### 3. CDN Integration
+
+```text
+youtube.com
+      ↓
+cdn.youtube.com
+      ↓
+Nearest CDN Edge Server
+```
+
+Users receive content from nearby CDN servers instead of the origin server.
+
+---
+
+## Key Takeaways
+
+- DNS provides the first layer of load balancing.
+- DNS helps with failover and high availability.
+- DNS integrates with CDNs for faster content delivery.
+- DNS changes are **not instant** because of TTL.
+- Instant failover requires additional layers like load balancers and health checks.
+
+---
+
+> DNS = First layer of traffic routing.
+
 **SECTION 4C - DNS in system design**
 
 Why DNS Matters

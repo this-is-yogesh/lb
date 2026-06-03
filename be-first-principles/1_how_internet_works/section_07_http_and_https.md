@@ -1,3 +1,126 @@
+# HTTP (HyperText Transfer Protocol)
+
+HTTP is an **application-layer protocol** built on top of TCP.
+It defines how clients and servers communicate.
+
+---
+
+## Request-Response Model
+
+Every HTTP interaction follows:
+
+```text
+Client
+   ↓ Request
+Server
+   ↑ Response
+Client
+```
+
+### Request
+
+Contains:
+
+- Method (GET, POST, PUT, DELETE)
+- URL (resource to access)
+- Headers (metadata)
+- Body (payload)
+
+### Response
+
+Contains:
+
+- Status code
+- Headers
+- Body (actual data)
+
+---
+
+## Example
+
+```text
+Client
+↓
+GET /watch?v=abc
+
+Server
+↓
+200 OK
++ HTML / JSON / Image Data
+```
+
+---
+
+## Common HTTP Methods
+
+| Method | Purpose |
+|----------|---------|
+| GET | Retrieve data |
+| POST | Create data |
+| PUT | Update data |
+| DELETE | Remove data |
+
+---
+
+## Components of an HTTP Message
+
+### Headers
+
+Carry metadata such as:
+
+- Authentication
+- Content type
+- Caching information
+- Cookies
+
+### Body
+
+Contains the actual data:
+
+- HTML
+- JSON
+- Images
+- Videos
+
+---
+
+## HTTP Versions
+
+| Version | Main Feature |
+|-----------|-------------|
+| HTTP/1.0 | One request per connection |
+| HTTP/1.1 | Connection reuse (Keep-Alive) |
+| HTTP/2 | Multiple requests over one connection |
+| HTTP/3 | Uses QUIC (UDP-based) for lower latency |
+
+Most modern systems use **HTTP/1.1** or **HTTP/2**.
+
+---
+
+## System Design Relevance
+
+Almost all backend communication happens over HTTP:
+
+- Web applications
+- REST APIs
+- Microservices
+- Browser-server communication
+
+---
+
+## Key Takeaway
+
+> HTTP defines the structure of communication between clients and servers.
+
+```text
+Client
+↓ Request
+Server
+↓ Process
+Client
+↑ Response
+```
+
 **SECTION 7 - HTTP and HTTPS**
 
 What is HTTP?

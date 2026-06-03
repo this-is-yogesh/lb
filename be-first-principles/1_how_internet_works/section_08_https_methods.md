@@ -1,3 +1,154 @@
+# HTTP Methods
+
+HTTP methods define the action to perform on a resource.
+
+| Method | Purpose | Idempotent? |
+|----------|---------|-------------|
+| GET | Retrieve data | ✓ |
+| POST | Create data | ✗ |
+| PUT | Replace entire resource | ✓ |
+| PATCH | Partially update resource | ✗ |
+| DELETE | Remove resource | ✓ |
+
+---
+
+## Examples
+
+```text
+GET    /users/123
+POST   /users
+PUT    /users/123
+PATCH  /users/123
+DELETE /users/123
+```
+
+---
+
+## Idempotency
+
+An operation is **idempotent** if performing it multiple times produces the same result.
+
+### Idempotent Operations
+
+```text
+GET /users/123
+
+Call 10 times
+↓
+Same result
+```
+
+```text
+DELETE /users/123
+
+Call again
+↓
+User is already deleted
+↓
+State remains the same
+```
+
+```text
+PUT /users/123
+
+Replace with same data
+↓
+Final state is unchanged
+```
+
+---
+
+### Non-Idempotent Operations
+
+```text
+POST /users
+
+Call 3 times
+↓
+3 users created
+```
+
+Each request changes the state.
+
+---
+
+## Why Idempotency Matters
+
+Distributed systems experience:
+
+- Network failures
+- Timeouts
+- Retries
+
+Example:
+
+```text
+POST /orders
+
+User clicks twice
+↓
+Request retried
+↓
+Two orders created
+↓
+Duplicate payment
+```
+
+To avoid this, systems use:
+
+- Idempotency keys
+- Unique request IDs
+
+Payment systems like Stripe rely heavily on this.
+
+---
+
+## REST Principle
+
+- **Method → Action**
+- **URL → Resource**
+
+Examples:
+
+```text
+GET    /users/123
+DELETE /posts/456
+POST   /orders
+PATCH  /users/123
+```
+
+Avoid:
+
+```text
+POST /getUser
+POST /deletePost
+```
+
+---
+
+## System Design Relevance
+
+HTTP methods affect:
+
+- API design
+- Retry behavior
+- Caching
+- Load balancers
+- Distributed systems
+
+---
+
+## Key Takeaway
+
+> Method defines the action, URL identifies the resource.
+
+```text
+GET    → Read
+POST   → Create
+PUT    → Replace
+PATCH  → Update
+DELETE → Remove
+```
 **SECTION 8 - HTTP Methods**
 
 What are HTTP Methods?
