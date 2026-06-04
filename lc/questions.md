@@ -57,8 +57,7 @@
 - car_fleet
 - simplify_path
 - evaluate_reverse_polish_notation
-- Basic Calculator
-- Largest Rectangle in Histogram
+- largest_rectangle_in_histogram
 
 
 4. Queue & Deque 

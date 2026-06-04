@@ -1,0 +1,2 @@
+1. Why left + (right - left) // 2 Instead of (left + right) // 2:
+The two expressions compute the same value, but left + right can overflow in languages with fixed-size integers (Java, C++). The subtraction form avoids overflow. In Python, integers have arbitrary precision so overflow is not an issue, but using the safe form is a good habit that interviewers notice.

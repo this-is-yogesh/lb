@@ -1,4 +1,5 @@
 1. transform: translateX(-50%);
+
    moves the element itself back by half its own width.
    meaning "Put my center at 50%."
    translate(-50%,-50%) means, move left by 50% of my own width and move up by 50% of my own height
