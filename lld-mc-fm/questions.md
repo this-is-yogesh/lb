@@ -2,7 +2,9 @@
 20 - getByClassName Hierarchy
 50 - execute async task (promises) in sequence
 53 - image comparison slider react
+58 - sumup functions values in parallel and seq
 67 - useMemo ,useCallback polyfill
+86 - array iterator method
 93 - currying function - 4
 94 - currying function - 3
 95 - currying function - 2
