@@ -1,4 +1,4 @@
-````md id="4kz7px"
+
 Here is the ultra-short, crisp revision summary for Server Types.
 
 ---

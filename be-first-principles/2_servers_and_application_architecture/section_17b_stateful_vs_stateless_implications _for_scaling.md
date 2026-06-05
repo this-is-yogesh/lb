@@ -1,4 +1,4 @@
-```md id="u6jv9c"
+
 Here is the ultra-short, crisp revision summary.
 
 ---
