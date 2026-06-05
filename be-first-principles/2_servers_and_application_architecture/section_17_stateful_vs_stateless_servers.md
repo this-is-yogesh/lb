@@ -1,4 +1,3 @@
-````md id="9vmb3p"
 Here is the ultra-short, crisp revision summary for Stateful vs. Stateless Servers.
 
 ---
@@ -13,8 +12,8 @@ Whether a server is stateful or stateless dictates your ability to **scale horiz
 
 Stores client session data (login status, shopping cart) directly in its local memory.
 
-- **The Problem:** If a user’s first request goes to Server A (where their session is saved), but their second request goes to Server B, Server B won't recognize them. The user suddenly appears logged out.
-- **The Constraint:** You must use "sticky sessions" to force a user to always hit the exact same server, which destroys flexible load balancing.
+* **The Problem:** If a user’s first request goes to Server A (where their session is saved), but their second request goes to Server B, Server B won't recognize them. The user suddenly appears logged out.
+* **The Constraint:** You must use "sticky sessions" to force a user to always hit the exact same server, which destroys flexible load balancing.
 
 ---
 
@@ -22,20 +21,15 @@ Stores client session data (login status, shopping cart) directly in its local m
 
 Stores zero client data in its own memory. Every request must bring its own identity (e.g., a JWT token) or pull data from an external shared hub.
 
-- **How it Works:** The client passes a token with every request. The receiving server validates it and instantly pulls the user's cart or profile from a shared **Redis cache** or **Database**.
-- **The Advantage:** Any server in your cluster can handle any request at any time. If Server A dies, Server B takes over seamlessly with zero data loss.
+* **How it Works:** The client passes a token with every request. The receiving server validates it and instantly pulls the user's cart or profile from a shared **Redis cache** or **Database**.
+* **The Advantage:** Any server in your cluster can handle any request at any time. If Server A dies, Server B takes over seamlessly with zero data loss.
 
 ---
 
 ### **Fast Revision Pipeline**
 
-```text
-Stateful = Data locked in local Server RAM
-           (✗ Hard to Scale)
+$$\text{Stateful} = \text{Data locked in local Server RAM } (\mathbf{X} \text{ Hard to Scale})$$
 
-Stateless = Data in external Cache/DB
-            (✓ Infinitely Scaleable)
-```
+$$\text{Stateless} = \text{Data in external Cache/DB } (\checkmark \text{ Infinitely Scaleable})$$
 
 **Daily Revision Trigger:** *In 99% of system design interviews, your application tier must be completely stateless.*
-````
