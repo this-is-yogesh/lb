@@ -1,46 +1,46 @@
-**SECTION 13: Latency and Round-Trip Time**
+Here is the ultra-short, crisp revision summary for Latency and RTT.
 
+---
 
-What is Latency and RTT?
-Latency is the time taken for data to travel from one point to another. Round-Trip Time (RTT) is the total time for a request to go to the server and the response to come back.
+### **The Crux**
 
-Speed of Light Sets the Floor: Speed of light in fiber optic cable: ~200,000 km/s (⅔ speed of light in vacuum)
+You cannot beat the speed of light. Because physical distance dictates network lag, system design focuses on **caching** (RAM vs. Disk) and **proximity** (CDNs) to stay within a strict **Latency Budget**.
 
-| Distance                  | One-Way Time | Round-Trip Time |
-|---------------------------|--------------|-----------------|
-| Mumbai to Mumbai          | 0.05ms       | 0.1ms           |
-| Mumbai to Singapore       | 20ms         | 40ms            |
-| Mumbai to London          | 36ms         | 72ms            |
-| Mumbai to San Francisco   | 68ms         | 136ms           |
+---
 
-Note: Real-world RTT is usually 2-5x higher due to routing and network hops.
+### **The "Why Caching Works" Math**
 
-Real-World Latency Measurements
+The speed difference between reading from memory (RAM) and reading from a hard drive (Disk) is **five orders of magnitude**.
 
-| Operation                    | Typical Latency      |
-|------------------------------|----------------------|
-| L1 cache read (CPU)          | 0.5 ns               |
-| RAM access                   | 100 ns               |
-| SSD read                     | 150,000 ns           |
-| HDD read                     | 10,000,000 ns        |
-| Same data center round trip  | 0.5 ms               |
-| Same continent round trip    | 50-100 ms            |
-| Cross-continent round trip   | 100-300 ms           |
-| DNS lookup (uncached)        | 20-100 ms            |
-| TLS handshake                | 50-150 ms            |
+- **RAM Access:** 100 ns
+- **Same Data Center Cache (Redis):** 500,000 ns
+- **Disk Read (HDD):** 10,000,000 ns (**100,000× slower than RAM!**)
 
-Why This Matters in System Design
-The difference between RAM and disk is huge (100,000x slower). This is why caching is extremely important - it moves operations from slow disk to fast memory or cache.
+> **Takeaway:** Moving data from Disk to a RAM-based Cache completely changes the time scale of your system.
 
-Latency Budget Example (YouTube Homepage under 500ms)
+---
 
-- DNS: 0ms (cached)
-- TCP + TLS: 50ms
-- Server processing: 100ms
-- Network transit: 100ms
-- Browser rendering: 200ms
-- Buffer: 50ms
+### **The Distance Penalty (Theoretical vs. Real RTT)**
 
-Total: 500ms
+The further data has to travel through fiber optic cables, the higher the Round-Trip Time (RTT):
 
-If server processing increases to 300ms, the entire budget is broken. This is why performance optimization and caching decisions are critical.
+- **Mumbai ↔ Singapore:** ~40 ms
+- **Mumbai ↔ San Francisco:** ~136 ms
+- *Note: Real-world RTT is actually **2–5× higher** due to network hops and routing.*
+
+---
+
+### **The Latency Budget (Target: <500 ms Homepage Load)**
+
+Every millisecond counts. In an interview, break down your performance budget like this:
+
+```text
+Connection (50 ms)
++ Server Code (100 ms)
++ Network Transit (100 ms)
++ Browser Render (200 ms)
+--------------------------------
+= 450 ms
+```
+
+**Daily Revision Trigger:** *If your database query takes 300 ms, you have already blown your entire latency budget before the user's browser even attempts to draw the screen.*

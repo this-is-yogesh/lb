@@ -1,46 +1,54 @@
-**SECTION 14 - Section Summary: How the Internet Works**
+Here is the ultra-short, crisp summary of the section wrap-up for your final daily revision layer.
 
-Concepts Covered
+---
 
-| Concept       | One-Line Summary                              | System Design Relevance |
-|---------------|-----------------------------------------------|-------------------------|
-| Client-Server | Client requests, server responds              | Foundation of all networked systems |
-| DNS           | Translates domain names to IP addresses       | GeoDNS for global routing,CDN integration, failover |
-| IP + Port     | Machine address + application identifier      | Service discovery, multi-service deployment |
-| TCP           | Reliable, ordered delivery with handshake     | Used for APIs, database connections, file transfers |
-| UDP           | Fast, unreliable delivery without handshake   | Used for live video, voice calls, gaming |
-| HTTP/HTTPS    | Application-layer request-response protocol   | API design, REST endpoints, status codes |
-| TLS           | Encrypts communication between client and server | TLS termination at load balancer, mTLS for internal |
-| Latency       | Time for data to travel between two points    | Drives caching, CDN, replication, and sharding decisions |
+### **The Crux**
 
-How These Concepts Connect to the Course
+Every single component in system design—from Load Balancers to Message Queues—exists purely to solve the networking, scalability, and latency limitations of the basic **Client-Server model**.
 
-- Section 3 (Servers): Builds on client-server model, what happens inside the server
-- Section 4 (Databases): The data layer that servers query (ports 5432, 3306, 6379)
-- Section 5 (Scaling): Solving the "one server isn't enough" problem
-- Section 6 (Caching): Solving the latency problem (RAM vs disk)
-- Section 7 (Load Balancing): Distributing TCP connections across servers
-- Section 8 (CDN): Solving cross-continent latency with edge servers
-- Section 9 (Queues): Async processing to avoid making clients wait
-- Section 10 (APIs): Designing HTTP endpoints with proper methods and status codes
+---
 
-Common Interview Mistakes
-- Not knowing the difference between TCP and UDP or when to use each
-- Confusing 401 (not authenticated) with 403 (not authorized)
-- Forgetting that DNS resolution adds latency on first request
-- Not considering TLS handshake cost in latency budgets
-- Treating latency as one number instead of P50, P95, P99
+### **The Cheat Sheet: System Design Interdependence**
 
-Key Numbers to Remember
+- **Servers & Scaling:** Solves the single-server bottleneck.
+- **Databases & Caching:** Bridges the 100,000× speed gap between RAM (100 ns) and Disk (10 ms).
+- **Load Balancers:** Distributes incoming raw **TCP** connections safely.
+- **CDNs:** Defeats cross-continent network transit lag (100–300 ms) by moving data closer to the user.
+- **Queues:** Shifts heavy tasks to **Async Processing** so the client gets an immediate response.
+- **APIs:** Standardizes communication using clean **HTTP methods** and precise **Status Codes**.
 
-| Item                        | Typical Value       |
-|-----------------------------|---------------------|
-| DNS lookup (uncached)       | 20-100ms            |
-| TCP handshake               | 20-50ms             |
-| TLS handshake               | 50-150ms            |
-| Same data center RTT        | ~0.5ms              |
-| Same continent RTT          | 50-100ms            |
-| Cross-continent RTT         | 100-300ms           |
-| RAM access                  | 100 nanoseconds     |
-| SSD read                    | 150 microseconds    |
-| HDD read                    | 10 milliseconds     |
+---
+
+### **Top 5 Interview Pitfalls to Avoid**
+
+1. **Auth Confusion:** **`401`** means *Who are you?* (No valid login token). **`403`** means *I know who you are, but you don't have permission.*
+2. **Ignoring Connection Overhead:** Always calculate the **TCP + TLS handshake latency** (~70–200 ms) into your initial connection budgets.
+3. **Vague Latency Terms:** Never treat latency as a single static number. Discuss it as a distribution (**P50, P95, P99**).
+4. **Wrong Protocol:** Default to **TCP** for safety/integrity (APIs, DBs); reserve **UDP** strictly for real-time speed (Live streaming, gaming).
+5. **DNS Blindspot:** Remember that the very first cold request a client makes always pays an extra uncached **DNS lookup penalty** (20–100 ms).
+
+---
+
+### **Hard Numbers to Memorize**
+
+```text
+RAM Access (100 ns)
+    ≪
+SSD Read (150 μs)
+    ≪
+Same DC RTT (0.5 ms)
+    ≪
+HDD Read (10 ms)
+    ≪
+Cross-Continent RTT (100–300 ms)
+```
+
+Alternatively:
+
+```text
+RAM Access (100 ns)
+≪ SSD Read (150 μs)
+≪ Same DC RTT (0.5 ms)
+≪ HDD Read (10 ms)
+≪ Cross-Continent RTT (100–300 ms)
+```

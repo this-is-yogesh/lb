@@ -1,48 +1,38 @@
-SLIDE 16: Single Server Architecture
+Here is the ultra-short, crisp revision summary for Single Server Architecture.
 
-The simplest possible system runs everything on one single machine: the web server, the application code, and the database all live together on the same computer.
+---
 
+### **The Crux**
 
-REFER to image single_server_architecture.jpg
+Single Server Architecture puts your **Web Server, App Code, and Database on one single machine**. While cheap and simple for prototypes, it establishes a massive **Single Point of Failure (SPOF)**—if any single component maxes out or crashes, your entire business goes offline.
 
-What Runs on This Single Server:
+---
 
-1. Web Server (Nginx or Apache)
-   - Listens on port 80 or 443 for incoming traffic
-   - Serves static files such as HTML, CSS, JavaScript, and images
-   - Forwards dynamic requests to the application code
+### **The All-in-One Component Stack**
 
-2. Application Code (Node.js, Django, Spring Boot, etc.)
-   - Contains all business logic
-   - Handles user authentication and authorization
-   - Implements API endpoints
-   - Usually runs on an internal port like 3000 or 8080
+- **1. Web Server (Nginx/Apache - Port 80/443):** Handles incoming client traffic and serves static files.
+- **2. App Code (Node.js/Django - Port 3000/8080):** Handles the core business logic and APIs.
+- **3. Database (PostgreSQL/MySQL - Port 5432/3306):** Saves data directly onto the local machine's hard drive.
 
-3. Database (PostgreSQL, MySQL, etc.)
-   - Stores all persistent data
-   - Runs on an internal port like 5432 (PostgreSQL) or 3306 (MySQL)
-   - Data is stored directly on the local disk of the same machine
+---
 
+### **The Breaking Thresholds Cheat Sheet**
 
-When This Architecture Works Well:
+| Resource | What Causes It to Break | System Symptom |
+| --- | --- | --- |
+| **CPU** | Complex computations or massive requests. | Requests queue up, causing severe response lag (>70% utilization). |
+| **Memory** | Too many concurrent connections or huge data payloads. | Out-of-Memory (OOM) error crashes the server (>90% RAM usage). |
+| **Disk I/O** | High-volume database reads/writes fighting for the hard drive. | Queries bottleneck, causing latency to spike from milliseconds to seconds. |
+| **Network** | Heavy media downloads or high raw traffic. | Packet loss and client-side connection timeouts (>80% bandwidth usage). |
 
-- Personal projects and prototypes
-- Early stage MVPs (Minimum Viable Products)
-- Low traffic applications (under 1,000 daily active users)
-- Small datasets (under 10 GB)
-- Solo developer or very small team where coordination is minimal
+---
 
+### **The Golden Rule of Scaling**
 
-When This Architecture Starts to Break:
+```text
+Single Server (All-in-One)
+            ↓
+Step 1: Separate the DB onto its own machine
+```
 
-| Problem                | Symptom                                      | Threshold |
-|------------------------|----------------------------------------------|---------|
-| CPU exhaustion         | Requests start queuing up, response times increase sharply | >70% sustained CPU usage |
-| Memory exhaustion      | Processes crash, system triggers OOM (Out of Memory) kills | >90% RAM usage |
-| Disk I/O bottleneck    | Database queries become very slow (takes seconds) | Disk queue depth > 2 |
-| Network saturation     | Packet loss occurs, frequent timeouts | >80% bandwidth utilization |
-| Single point of failure| If the server crashes, the entire application goes down | Any hardware or software failure |
-
-
-Important Note:
-The first step most applications take when scaling is to separate the database from the application server. This allows each part to scale independently and is covered in Section 5 (Scaling).
+**Daily Revision Trigger:** *Never stick with a single server if you have team coordination needs, a dataset growing past 10 GB, or traffic crossing 1,000 daily active users.*

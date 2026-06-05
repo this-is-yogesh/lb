@@ -1,58 +1,18 @@
-# DNS Resolution
+The Crux
+DNS lookup is a hierarchical game of "ask the next guy" until you find the exact IP. To save time, every step caches the answer using a TTL (Time to Live) timer.
 
-When a browser needs the IP address of `youtube.com`, it checks multiple layers until it finds the answer.
+Refer to image dns-resolution.png
+The 6-Step Lookup Chain
+Step 1 (Browser): Checks its own recent memory.
 
-```text
-Browser Cache
-      ↓
-OS Cache
-      ↓
-ISP DNS Resolver
-      ↓
-Root Server
-      ↓
-.com TLD Server
-      ↓
-Authoritative DNS Server
-      ↓
-IP Address
-```
+Step 2 (OS): Checks the local computer’s memory.
 
-### Resolution Flow
+Step 3 (ISP Resolver): The middleman that does the hunting for you.
 
-1. Browser cache
-2. OS cache
-3. Recursive resolver (ISP)
-4. Root name server
-5. TLD server (.com)
-6. Authoritative DNS server
-7. Return IP address
+Step 4 (Root Server): Points to the extension server (.com).
 
-### Caching
+Step 5 (TLD Server): Points to the company's server (google.com).
 
-The result is cached at each level according to **TTL (Time To Live)**.
+Step 6 (Authoritative Server): The final boss. Holds the actual IP.
 
-### Key Takeaway
-
-> DNS resolution is a hierarchical lookup with caching at every level.
-
-Caching & TTL
-Every level caches the response based on the TTL (Time To Live) value. Higher TTL means longer caching and fewer lookups, but slower propagation of changes.
-
-**SECTION 4B - DNS resolution**
-
-DNS resolution is a hierarchical lookup process that converts a domain name (like youtube.com) into an IP address. It involves multiple levels, starting from local caches to global DNS servers. Each level either serves the answer from its cache or forwards the query to the next level.
-Resolution Steps
-
-REFER to image dns-resolution.png
-When a browser needs to resolve a domain, it follows this flow:
-
-Browser Cache — Checks its own recent cache first.
-OS Cache — Then checks the operating system’s local DNS cache.
-Recursive Resolver — Query is sent to the ISP’s recursive resolver.
-Root Server — Resolver queries a Root Name Server, which directs it to the TLD (.com) server.
-TLD Server — The .com server points to the domain’s authoritative nameserver (e.g., Google’s DNS).
-Authoritative Server — The authoritative server returns the final IP address.
-
-Caching & TTL
-Every level caches the response based on the TTL (Time To Live) value. Higher TTL means longer caching and fewer lookups, but slower propagation of changes.
+$$\text{Browser / OS Cache} \longrightarrow \text{ISP Resolver} \longrightarrow \text{Root} \longrightarrow \text{TLD (.com)} \longrightarrow \text{Authoritative} \longrightarrow \text{IP Found!}$$

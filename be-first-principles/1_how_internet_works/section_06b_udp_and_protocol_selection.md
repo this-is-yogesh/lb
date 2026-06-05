@@ -1,172 +1,34 @@
-# UDP (User Datagram Protocol)
-
-UDP is a transport protocol that prioritizes **speed** over reliability.
-Unlike TCP, UDP sends data immediately without establishing a connection.
-
-## UDP Flow
-
-```text
-Client → Server : Data
-
-(No handshake)
-(No acknowledgment)
-(No retransmission)
-```
-
-If packets are lost or arrive out of order, UDP does not fix them.
+Here is the ultra-short, crisp revision summary for UDP and Protocol Selection.
 
 ---
 
-## UDP Characteristics
+### **The Crux**
 
-- No connection setup
-- No delivery guarantee
-- No ordering guarantee
-- No congestion control
-- Very low overhead
+**UDP** is the internet’s **speed demon**. It is a "fire-and-forget" protocol that skips handshakes and confirmations. It trades 100% accuracy for absolute maximum speed.
 
 ---
 
-## TCP vs UDP
+### **UDP Characteristics**
 
-| TCP | UDP |
-|------|-----|
-| Reliable | Fast |
-| Ordered delivery | No ordering guarantee |
-| Retransmits lost packets | No retransmission |
-| Connection-oriented | Connectionless |
-| Higher overhead | Minimal overhead |
+* **No Handshake:** Data is sent instantly with zero connection setup.
+* **No Guarantees:** Packets can be lost or arrive out of order, and the protocol won't care.
+* **Lightweight:** Only an 8-byte header (compared to TCP's bulky 20 bytes).
 
 ---
 
-## Choosing Between TCP and UDP
+### **The Protocol Selection Matrix**
 
-### Use TCP when reliability matters
-
-- Web browsing (HTTP/HTTPS)
-- APIs
-- Database queries
-- File downloads
-
-**Requirement:** Every byte must arrive correctly.
+| Use Case | Protocol | The "Why" |
+| --- | --- | --- |
+| **Web / APIs / Databases** | **TCP** | Data integrity is non-negotiable. Missing data breaks things. |
+| **Live Calls / Gaming** | **UDP** | Speed/Real-time interaction matters more than a dropped frame. |
+| **DNS Lookups** | **UDP** | Queries are small and stateless; needs to be lightning-fast. |
 
 ---
 
-### Use UDP when latency matters
+### **System Design Interview Gold: The Video Streaming Nuance**
 
-- Video calls
-- Voice calls
-- Online gaming
-- Live streaming
-- IoT telemetry
-- DNS lookups
+* **Live Video Calls (Zoom/Teams):** Uses **UDP**. There is no time to buffer; a delayed packet is useless.
+* **Pre-recorded Video (YouTube/Netflix):** Uses **TCP** (via protocols like HLS/DASH). The video is chopped into small chunks, downloaded reliably, and buffered. A tiny buffering delay is acceptable for high-quality, uncorrupted video.
 
-**Requirement:** Current data is more important than perfect delivery.
-
----
-
-## System Design Relevance
-
-Most backend systems communicate over **TCP**:
-
-- HTTP/HTTPS
-- gRPC
-- Database connections
-
-UDP is commonly used for:
-
-- Live video/audio streaming
-- Multiplayer gaming
-- IoT systems
-
----
-
-## Hybrid Approach
-
-### Pre-recorded video (YouTube, Netflix)
-
-Uses **TCP**.
-
-```text
-Video
-↓
-Split into chunks
-↓
-Downloaded over HTTP/TCP
-↓
-Buffered
-↓
-Played
-```
-
-Small delays are acceptable.
-
----
-
-### Real-time communication (Zoom, Teams)
-
-Uses **UDP**.
-
-```text
-Camera
-↓
-Packet sent immediately
-↓
-Receiver
-```
-
-Dropped frames are better than delayed frames.
-
----
-
-## Rule of Thumb
-
-> TCP when reliability matters.
->
-> UDP when latency matters.
-
-**SECTION 6B - UDP and Protocol Selection**
-
-UDP (User Datagram Protocol)
-
-What is UDP? 
-UDP is a fast but unreliable protocol. It is a “fire and forget” protocol — it sends data without checking whether it actually reaches the destination.
-
-How UDP Works 
-No connection is established (no handshake).  
-Client simply sends the data packet to the server.  
-No acknowledgment and no retransmission.  
-If a packet is lost or arrives out of order, UDP does nothing. The application must handle it.
-
-UDP Characteristics
-Very fast (no handshake delay)
-Minimal overhead (only 8-byte header)
-No guarantee of delivery
-No guarantee of packet order
-No congestion control (can flood the network)
-
-TCP vs UDP – When to Use Which?
-
-| Use Case                  | Protocol | Reason |
-|---------------------------|----------|--------|
-| Web browsing, APIs        | TCP      | Needs complete and correct data |
-| Database queries          | TCP      | Data must be accurate |
-| File transfers            | TCP      | Every byte is important |
-| Live video / Voice calls  | UDP      | Real-time is more important than perfection |
-| Online Gaming             | UDP      | Low latency is critical |
-| DNS lookups               | UDP      | Small & fast queries |
-
-System Design Importance
-In most system design interviews, you will use TCP (HTTP, gRPC, databases, etc.) because reliability is needed.  
-Use UDP when designing:
-- Live video or audio streaming
-- Real-time multiplayer games
-- IoT systems (sensors sending frequent small data)
-
-Hybrid Approach*
-- Pre-recorded video (YouTube, Netflix) → Uses TCP (with buffering)  
-- Live video calls (Zoom) → Uses UDP (because delay feels bad)
-
-Simple Rule:  
-- Choose TCP when you need reliability.  
-- Choose UDP when you need speed and can tolerate some data loss.
+**Daily Revision Trigger:** *Only pitch UDP in an interview for Live Streaming, Multiplayer Games, or high-volume IoT sensor ingestion.*
