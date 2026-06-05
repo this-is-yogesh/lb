@@ -9,6 +9,9 @@ A **Reverse Proxy** is the server-side gatekeeper. It intercepts all incoming cl
 
 ---
 
+Refer to image reverse_proxies.png
+
+
 ### **Core Capabilities**
 
 - **Security:** Shields your backend server IP addresses from attackers.
