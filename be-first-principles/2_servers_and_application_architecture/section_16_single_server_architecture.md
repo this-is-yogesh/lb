@@ -8,6 +8,7 @@ Single Server Architecture puts your **Web Server, App Code, and Database on one
 
 ---
 
+Refer to image single_server_architecture.jpg
 ### **The All-in-One Component Stack**
 
 - **1. Web Server (Nginx/Apache - Port 80/443):** Handles incoming client traffic and serves static files.
