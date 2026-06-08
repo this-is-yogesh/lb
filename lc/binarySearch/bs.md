@@ -1,6 +1,4 @@
 
-
-````md
 # 🎯 The Ultimate Binary Search Interview Cheat Sheet
 
 ## 📌 Core Mindset & The Monotonic Rule
