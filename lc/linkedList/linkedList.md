@@ -1,5 +1,4 @@
-````md
----
+
 
 # 🚀 The Ultimate Linked List Interview Cheat Sheet
 
