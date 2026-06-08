@@ -84,11 +84,11 @@
 
 
 6. Binary Search 
-- Binary Search (classic)
-- Lower Bound / Upper Bound
-- Smallest element ≥ target
-- First & Last Position of Element
-- Search 2D Matrix
+- binary_search (classic)
+- lower_bound / upper_bound
+- smallest_element ≥ target
+- first_&_last_position_of_element
+- search_2d_Matrix
 - Peak Element
 - Search in Rotated Sorted Array
 - Find Minimum in Rotated Array
