@@ -68,8 +68,8 @@
 - Sliding Window Maximum
 
 5. Linked List 
-- Reverse Linked List
-- Merge Two Sorted Lists
+- reverse_linked_list
+- merge_two_sorted_lists
 - Detect Cycle
 - Find Cycle Start
 - Remove Nth Node From End

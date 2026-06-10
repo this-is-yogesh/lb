@@ -31,7 +31,9 @@ function binarySearch(nums, target) {
     while (left <= right) {
         // Safe mid calculation to avoid potential integer overflow
         let mid = left + Math.floor((right - left) / 2);
-        
+        /**
+         * I use left + (right - left) / 2 instead of (left + right) / 2 to avoid potential integer overflow while finding the middle index.
+         * in JavaScript, overflow isn't usually an issue because numbers are 64-bit floating point, but this is considered good practice and is important in languages like Java and C++*/
         if (nums[mid] === target) {
             return mid;
         } else if (nums[mid] < target) {
