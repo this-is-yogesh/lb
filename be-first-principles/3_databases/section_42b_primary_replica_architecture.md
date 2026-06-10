@@ -14,6 +14,8 @@ This increases throughput and improves availability.
 
 ---
 
+Refer to image primary_repilca_architecture.png
+
 # **Primary-Replica Architecture**
 
 ```text
