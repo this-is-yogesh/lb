@@ -70,8 +70,8 @@
 5. Linked List 
 - reverse_linked_list
 - merge_two_sorted_lists
-- Detect Cycle
-- Find Cycle Start
+- detect_cycle
+- find_cycle_start
 - Remove Nth Node From End
 - Intersection of Two Lists
 - Palindrome Linked List

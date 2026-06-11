@@ -1,12 +1,12 @@
-6 - multi stepper component
-20 - getByClassName Hierarchy
-50 - execute async task (promises) in sequence
-53 - image comparison slider react
-58 - sumup functions values in parallel and seq
-67 - useMemo ,useCallback polyfill
-86 - array iterator method
-93 - currying function - 4
-94 - currying function - 3
-95 - currying function - 2
-97 - currying function - 1
-102 - getElementByClassName polyfill
+6. **Multi-stepper component** 
+20. **getByClassName Hierarchy** 
+50. **Execute async task (promises) in sequence** 
+53. **Image comparison slider in React** 
+58. **Sum up functions' values in parallel and sequentially** 
+67. **useMemo, useCallback polyfill** 
+86. **Array iterator method** 
+93. **Currying function 4**
+94. **Currying function 3** 
+95. **Currying function 2** 
+97. **Currying function 1** 
+102. **getElementByClassName polyfill** 
