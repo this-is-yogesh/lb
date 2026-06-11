@@ -1,4 +1,5 @@
 6. **Multi-stepper component** 
+12. **Array With Event Listeners**
 20. **getByClassName Hierarchy** 
 50. **Execute async task (promises) in sequence** 
 53. **Image comparison slider in React** 

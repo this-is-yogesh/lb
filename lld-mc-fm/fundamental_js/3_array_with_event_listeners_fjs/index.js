@@ -1,38 +1,63 @@
-Array.prototype.eventNames = {};
-Array.prototype.addListener = function (eventName, callback) {
-  if (!this.eventNames[eventName]) {
-    this.eventNames[eventName] = [];
+/**
+ * 
+ * Extend the arrays in javascript such that an 
+ * event gets dispatched whenever an item is 
+ * added or removed.
+
+Example
+Input:
+const arr = [];
+arr.addListener('add', (eventName, items, array) => {
+  console.log('items were added', items);
+});
+
+arr.addListener('remove', (eventName, item, array) => {
+  console.log(item, ' was removed');
+});
+
+arr.pushWithEvent('add', [4, 5]);
+arr.popWithEvent('remove');
+
+
+Output:
+"items were added" // [object Array] (2)
+[4,5]
+
+5 " was removed"
+ */
+
+Array.prototype.eventCollections = {};
+Array.prototype.addListener = function (eventName, cb) {
+  if (!this.eventCollections[eventName]) {
+    this.eventCollections[eventName] = new Array();
   }
-  this.eventNames[eventName].push(callback);
-};
-Array.prototype.pushWithEvent = function (eventName, values) {
-  this.push(...values);
-  this.triggerEvent(eventName, values);
-};
-Array.prototype.popWithEvent = function (eventName) {
-  let value = this.pop();
-  this.triggerEvent(eventName, value);
-};
-Array.prototype.triggerEvent = function (eventName, values) {
-  if (this.eventNames[eventName]) {
-    this.eventNames[eventName].forEach(callback => {
-      callback(eventName, values, this);
-    });
-  }
+  this.eventCollections[eventName].push(cb);
 };
 
+Array.prototype.pushWithEvent = function (eventName, arr) {
+  this.push(...arr);
+  this.eventCollections[eventName].forEach(cb => {
+    cb(eventName, arr, this);
+  });
+};
+
+Array.prototype.popWithEvent = function (eventName) {
+  let item = this.pop();
+  this.eventCollections[eventName].forEach(cb => {
+    cb(eventName, item, this);
+  });
+};
 const arr = [];
 arr.addListener("add", (eventName, items, array) => {
-  console.log("items were added", items, array);
+  console.log("items were added", eventName, items, array);
 });
 
 arr.addListener("remove", (eventName, item, array) => {
-  console.log(item, " was removed", array);
+  console.log(item, " was removed");
 });
 
+arr.pushWithEvent("add", [1, 2, 3, 6, 7]);
+arr.popWithEvent("remove");
+arr.popWithEvent("remove");
 arr.pushWithEvent("add", [4, 5]);
-arr.pushWithEvent("add", [7, 8]);
-arr.popWithEvent("remove");
-arr.popWithEvent("remove");
-
-console.log(arr.eventNames, "eventNames**");
+console.log(arr, "arr*");
