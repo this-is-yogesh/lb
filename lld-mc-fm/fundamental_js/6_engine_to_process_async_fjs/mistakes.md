@@ -1,0 +1,2 @@
+1. The crux of this question is while the async callback function is being executed the queue will keep pushing the cb and increase upto 6 and when first cb() will finally be executed , in its final we can see queueLength as 6 which goes to show that cbs were getting added while this async promise was getting executed, after that its pretty straightforward, we have to call the processEngine which will pop up from queue and process it till queue is empty
+

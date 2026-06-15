@@ -15,62 +15,55 @@ If there are more than 3 callbacks in the queue, follow FIFO if no argument is p
  */
 
 
-const QueueCallback = function (order = "FIFO") {
-  this.order = order;
-  this.orderExecutionLimit = 0;
-  this.queueOfCallbacks = new Array();
+class QueueCallbacks {
+  constructor(order = "FIFO") {
+    this.order = order;
+    this.engine = 0;
+    this.queue = new Array();
+  }
 
-  //public method
-  this.process = function (callback) {
-    if (this.orderExecutionLimit < 2) {
-      this.orderExecutionLimit++;
-      callback()
-        .then(i => {
-          console.log(i, "processed");
-        })
+  process = function (cb) {
+    if (!this.engine || this.engine < 2) {
+      this.engine++;
+      cb()
+        .then(res => {})
         .finally(() => {
-          this.orderExecutionLimit--;
-          executeNext();
+          this.engine--;
+          console.log(this.queue.length, "queLen-1");
+          this.processEngine();
         });
-    } else {
-      if (this.queueOfCallbacks.length < 6)
-        this.queueOfCallbacks.push(callback);
-      // console.log(this.queueOfCallbacks.length, "queuelength");
+    } else if (this.queue.length < 6) {
+      this.queue.push(cb);
     }
   };
 
-  //private method
-  //if we do executeNext = function(){} and call executeNext because it is a normal function, this inside will depened on how its called and hence it was not working but using arrow function inherits this from parent scope so this works in executeNext
-  const executeNext = () => {
-    if (this.queueOfCallbacks.length > 0 && this.orderExecutionLimit < 2) {
-      let nextFunctionToExecute =
-        this.order == "FIFO"
-          ? this.queueOfCallbacks.shift()
-          : this.queueOfCallbacks.pop();
-
-      if (nextFunctionToExecute) this.process(nextFunctionToExecute);
+  processEngine = function () {
+    if (this.queue.length && this.engine < 2) {
+      let cb = this.order === "FIFO" ? this.queue.shift() : this.queue.pop();
+      this.process(cb);
     }
   };
-};
+}
 
-function dummyAPI(index) {
-  return () => {
-    return new Promise((resolve, reject) => {
+function asyncFn(i) {
+  return function () {
+    return new Promise((res, rej) => {
       setTimeout(() => {
-        resolve(index);
-      }, 1000);
+        res(i);
+      }, i * 100);
     });
   };
 }
 
-let obj = new QueueCallback("LIFO");
-obj.process(dummyAPI(1));
-obj.process(dummyAPI(2));
-obj.process(dummyAPI(3));
-obj.process(dummyAPI(4));
-obj.process(dummyAPI(5));
-obj.process(dummyAPI(6));
-obj.process(dummyAPI(7));
-obj.process(dummyAPI(8));
-obj.process(dummyAPI(9));
-obj.process(dummyAPI(10));
+let obj = new QueueCallbacks();
+obj.process(asyncFn(1));
+obj.process(asyncFn(2));
+obj.process(asyncFn(3));
+obj.process(asyncFn(4));
+obj.process(asyncFn(5));
+obj.process(asyncFn(6));
+obj.process(asyncFn(7));
+obj.process(asyncFn(8));
+obj.process(asyncFn(9));
+obj.process(asyncFn(10));
+
