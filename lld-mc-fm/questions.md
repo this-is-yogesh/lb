@@ -3,6 +3,8 @@
 12. **Array With Event Listeners**
 20. **getByClassName Hierarchy** 
 24. **Cached API Calls**
+28. **Fetch With Timeout**
+49. **Execute async task (promises) in parallel**
 50. **Execute async task (promises) in sequence** 
 53. **Image comparison slider in React** 
 58. **Sum up functions' values in parallel and sequentially** 

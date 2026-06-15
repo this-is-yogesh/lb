@@ -78,3 +78,17 @@ Lower priority.
 4. Event loop clears ALL microtasks before macrotasks
 VERY important rule.
 
+
+
+Rule to Remember
+
+Think of the event loop as:
+
+1. Run synchronous code.
+2. Empty ALL microtasks.
+3. Execute ONE macrotask.
+4. Empty ALL microtasks.
+5. Execute ONE macrotask.
+6. Empty ALL microtasks.
+...
+(repeat)
