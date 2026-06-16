@@ -7,6 +7,7 @@
 49. **Execute async task (promises) in parallel**
 50. **Execute async task (promises) in sequence** 
 53. **Image comparison slider in React** 
+54. **Compose Async Function With Chaining Support**
 58. **Sum up functions' values in parallel and sequentially** 
 67. **useMemo, useCallback polyfill** 
 86. **Array iterator method** 
