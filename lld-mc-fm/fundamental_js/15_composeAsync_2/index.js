@@ -18,28 +18,6 @@ composeAsync(d, c, b, a)
  */
 
 
-function composeAsync(...args) {
-  let i = 0;
-  return (val1, val2, cb) => {
-    let argsReversed = [...args].reverse();
-
-    function call(arr, i) {
-      function result(err, product) {
-        if (err) {
-          cb(err);
-          return;
-        }
-        call([product], i + 1);
-      }
-      if (!argsReversed[i]) {
-        cb(null, ...arr);
-        return;
-      }
-      argsReversed[i](...arr, result);
-    }
-    call([val1, val2], i);
-  };
-}
 function a(x, y, next) {
   setTimeout(() => {
     next(null, x * y);
@@ -69,3 +47,29 @@ function done(error, result) {
 }
 const compose = composeAsync(d, c, b, a);
 compose(5, 3, done);
+
+
+
+function composeAsync(...args) {
+  let i = 0;
+  return (val1, val2, cb) => {
+    let argsReversed = [...args].reverse();
+
+    function call(arr, i) {
+      function result(err, product) {
+        if (err) {
+          cb(err);
+          return;
+        }
+        call([product], i + 1);
+      }
+      if (!argsReversed[i]) {
+        cb(null, ...arr);
+        return;
+      }
+      argsReversed[i](...arr, result);
+    }
+    call([val1, val2], i);
+  };
+}
+
