@@ -1,4 +1,5 @@
 2. **Process Async CallBack Queue**
+5. **Search With Pagination**
 6. **Multi-stepper component** 
 12. **Array With Event Listeners**
 20. **getByClassName Hierarchy** 
@@ -17,3 +18,4 @@
 95. **Currying function 2** 
 97. **Currying function 1** 
 102. **getElementByClassName polyfill** 
+110. **Custom Browser Cookie** 
