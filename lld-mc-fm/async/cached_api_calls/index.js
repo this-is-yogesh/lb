@@ -1,6 +1,30 @@
 /**
  * 
  * Implement a function in JavaScript that caches the API response for the given amount of time. If a new call is made between that time, the response from the cache will be returned, else a fresh API call will be made.
+ * 
+ * 
+ * const call = cachedApiCall(3000);
+ *
+ * call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
+  console.log(a, "first call"),
+);
+setTimeout(() => {
+  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
+    console.log(a, "1000"),
+  );
+}, 1000);
+
+setTimeout(() => {
+  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
+    console.log(a, "2000"),
+  );
+}, 2000);
+
+setTimeout(() => {
+  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
+    console.log(a, "3000"),
+  );
+}, 3000);
  */
 
 const call = cachedApiCall(3000);

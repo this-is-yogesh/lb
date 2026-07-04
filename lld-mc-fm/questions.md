@@ -4,8 +4,12 @@
 9. **Capture Product Visible ViewPort**
 12. **Array With Event Listeners**
 20. **getByClassName Hierarchy** 
+21. **Handling race condition**
 24. **Cached API Calls**
 28. **Fetch With Timeout**
+42. **Singleton Design Pattern**
+43. **Publisher Subscriber Design Pattern**
+48. **Proxy Design Pattern**
 49. **Execute async task (promises) in parallel**
 50. **Execute async task (promises) in sequence** 
 53. **Image comparison slider in React** 
@@ -14,6 +18,7 @@
 58. **Sum up functions' values in parallel and sequentially** 
 67. **useMemo, useCallback polyfill** 
 86. **Array iterator method** 
+92. **Memoize Any Function**
 93. **Currying function 4**
 94. **Currying function 3** 
 95. **Currying function 2** 
