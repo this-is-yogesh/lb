@@ -1,1 +1,0 @@
-SyncSpace is an offline-first collaborative document platform inspired by Google Docs and Notion. Users can create, organize, and edit documents in real time. The application continues to function without internet access and automatically synchronizes local changes once connectivity is restored.

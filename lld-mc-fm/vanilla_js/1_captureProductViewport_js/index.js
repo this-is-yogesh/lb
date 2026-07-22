@@ -1,6 +1,3 @@
-/**4-- code to select element  */
-const block = document.querySelector(".blocks");
-console.log(block.getBoundingClientRect(), "getBoundingclient");
 
 const inViewPort = elm => {
   const eDim = elm.getBoundingClientRect();
