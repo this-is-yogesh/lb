@@ -6,35 +6,29 @@ There are cases in programming where we want to complete the network calls in a 
 The original fetch method does not come with an option to abort in X times, thus it is often asked during interviews to create your custom function fetch with a timeout, which will abort the network call if it is not completed in a specified duration.
  */
 
-fetchWithTimeout("https://jsonplaceholder.typicode.com/todos/1", 0)
-  .then(resp => {
-    console.log(resp);
-  })
-  .catch(error => {
-    console.error(error);
+fetchWithTimeOut("https://jsonplaceholder.typicode.com/todos/1", 50)
+  .then(res => console.log(res, "response"))
+  .catch(err => {
+    console.log(err, "Error");
   });
 
-function fetchWithTimeout(url, duration) {
+function fetchWithTimeOut(url, duration) {
+  let timerId;
   return new Promise((resolve, reject) => {
-    let controller = new AbortController();
-    let signal = controller.signal;
-    let timerId = null;
-
+    let abortController = new AbortController();
+    let signal = abortController.signal;
     fetch(url, { signal })
-      .then(res => {
-        return res.json();
-      })
-      .then(res => {
+      .then(res => res.json())
+      .then(response => {
         clearTimeout(timerId);
-        resolve(res);
+        resolve(response);
       })
-      .catch(e => {
-        console.log("Error*", e);
-        reject(e);
+      .catch(err => {
+        reject(err);
       });
-
     timerId = setTimeout(() => {
-      controller.abort();
+      abortController.abort();
+      console.log("Aborted Error");
     }, duration);
   });
 }

@@ -4,6 +4,9 @@
  * 
  * 
  * const call = cachedApiCall(3000);
+ * 
+ * 
+ *
  *
  * call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
   console.log(a, "first call"),
@@ -25,28 +28,37 @@ setTimeout(() => {
     console.log(a, "3000"),
   );
 }, 3000);
+setTimeout(() => {
+  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
+    console.log(a, "5000"),
+  );
+}, 5000);
  */
 
 const call = cachedApiCall(3000);
+
 function cachedApiCall(timer) {
   let cache = {};
-  let totalTime = null;
-  return url => {
-    if (cache[url] && Date.now() < totalTime) {
-      console.log("cached");
-      return Promise.resolve(cache[url]);
-    } else {
-      console.log("non-cached");
-      return fetch(url)
-        .then(res => {
-          return res.json();
-        })
-        .then(res => {
-          cache[url] = res;
-          totalTime = Date.now() + timer;
-          return cache[url];
-        });
-    }
+  return function (url) {
+    return new Promise((resolve, reject) => {
+      let cached = cache[url];
+      if (cached && Date.now() < cached.expiryTime) {
+        console.log("cached");
+        resolve(cached.data);
+      } else {
+        fetch(url)
+          .then(res => res.json())
+          .then(response => {
+            console.log("non-cached");
+            cache[url] = {
+              data: response,
+              expiryTime: Date.now() + timer,
+            };
+            resolve(response);
+          })
+          .catch(reject);
+      }
+    });
   };
 }
 
@@ -70,32 +82,9 @@ setTimeout(() => {
     console.log(a, "3000"),
   );
 }, 3000);
-
-setTimeout(() => {
-  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
-    console.log(a, "3500"),
-  );
-}, 3500);
-
-setTimeout(() => {
-  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
-    console.log(a, "4000"),
-  );
-}, 4000);
-
 setTimeout(() => {
   call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
     console.log(a, "5000"),
   );
 }, 5000);
-setTimeout(() => {
-  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
-    console.log(a, "7000"),
-  );
-}, 7000);
 
-setTimeout(() => {
-  call("https://jsonplaceholder.typicode.com/todos/1", {}).then(a =>
-    console.log(a, "9000"),
-  );
-}, 9000);

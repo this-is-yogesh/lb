@@ -5,8 +5,8 @@
 12. **Array With Event Listeners**
 20. **getByClassName Hierarchy** 
 21. **Handling race condition**
-24. **Cached API Calls**
-28. **Fetch With Timeout**
+24. **Cached API Calls - R**
+28. **Fetch With Timeout - R**
 42. **Singleton Design Pattern**
 43. **Publisher Subscriber Design Pattern**
 48. **Proxy Design Pattern**
